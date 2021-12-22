@@ -1,0 +1,8 @@
+{
+  "extends": "stylelint-config-standard",
+  "rules": {
+    "color-hex-length": "long",
+    "color-hex-case": "upper",
+    "value-keyword-case": null
+  }
+}
