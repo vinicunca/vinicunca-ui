@@ -1,3 +1,3 @@
-import { createVinicunca } from '../src/main';
+import { createVinicunca } from '../src/entry';
 
 export default createVinicunca({});
