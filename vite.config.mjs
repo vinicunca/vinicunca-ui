@@ -14,10 +14,12 @@ export default defineConfig(({ mode }) => {
 
   return {
     root: resolve('dev'),
+
     server: {
       port: process.env.PORT,
       strictPort: !!process.env.PORT,
     },
+
     resolve: {
       alias: [{ find: /^~\/(.*)/, replacement: resolve('./src/$1') }],
     },
@@ -49,6 +51,11 @@ export default defineConfig(({ mode }) => {
           },
         },
       },
+    },
+
+    test: {
+      global: true,
+      environment: 'happy-dom',
     },
   };
 });
