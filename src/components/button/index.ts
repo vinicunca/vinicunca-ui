@@ -1,1 +1,1 @@
-export { VButton } from './VButton';
+export { VButton } from './v-button';

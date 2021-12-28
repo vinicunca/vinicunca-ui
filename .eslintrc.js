@@ -17,5 +17,21 @@ module.exports = defineConfig({
         '@typescript-eslint/no-redeclare': 'off',
       },
     },
+    {
+      files: '**/*.spec.cy.{ts,tsx}',
+      env: {
+        'cypress/globals': true,
+      },
+      plugins: ['cypress'],
+      extends: ['plugin:cypress/recommended'],
+      rules: {
+        'no-unused-expressions': 'off',
+        'cypress/no-assigning-return-values': 'error',
+        'cypress/no-unnecessary-waiting': 'warn',
+        'cypress/assertion-before-screenshot': 'warn',
+        'cypress/no-force': 'warn',
+        'cypress/no-async-tests': 'error',
+      },
+    },
   ],
 });
