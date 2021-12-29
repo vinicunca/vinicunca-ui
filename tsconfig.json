@@ -72,7 +72,8 @@
     },
 
     "types": [
-      "@praburangki/web-utilities"
+      "@praburangki/web-utilities",
+      "node"
     ]
   },
 

@@ -1,12 +1,12 @@
 import path from 'path';
-import { fileURLToPath } from 'url';
 import vue from '@vitejs/plugin-vue';
 import vueJsx from '@vitejs/plugin-vue-jsx';
 import viteSSR from 'vite-ssr/plugin.js';
 import dts from 'vite-plugin-dts';
 import { loadEnv, defineConfig } from 'vite';
+import Unocss from 'unocss/vite';
+import { presetUno } from 'unocss';
 
-const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const resolve = (file) => path.resolve(__dirname, file);
 
 export default defineConfig(({ mode }) => {
@@ -18,7 +18,7 @@ export default defineConfig(({ mode }) => {
     server: {
       port: process.env.PORT,
       strictPort: !!process.env.PORT,
-    },
+    } as any,
 
     resolve: {
       alias: [{ find: /^~\/(.*)/, replacement: resolve('./src/$1') }],
@@ -33,6 +33,13 @@ export default defineConfig(({ mode }) => {
         staticImport: true,
         insertTypesEntry: true,
         logDiagnostics: true,
+      }),
+
+      Unocss({
+        presets: [
+          presetUno(),
+          // ...custom presets
+        ],
       }),
     ],
 
