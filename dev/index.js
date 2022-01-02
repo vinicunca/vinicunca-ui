@@ -5,6 +5,7 @@ import vinicunca from './vinicunca';
 import { routes } from './router';
 
 import 'uno.css';
+import '../src/designs/styles/index.css';
 
 export default ViteSSR(App, { routes }, ({ app }) => {
   const head = createHead();
