@@ -3,3 +3,5 @@ import '@percy/cypress';
 // import '@mdi/font/css/materialdesignicons.css'
 import './mount';
 // import './selector';
+
+import 'uno.css';
