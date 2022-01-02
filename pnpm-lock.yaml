@@ -3,6 +3,7 @@ lockfileVersion: 5.3
 specifiers:
   '@cypress/vite-dev-server': ^2.2.2
   '@cypress/vue': ^3.0.5
+  '@iconify-json/carbon': ^1.0.12
   '@percy/cli': ^1.0.0-beta.71
   '@percy/cypress': ^3.1.1
   '@praburangki/eslint-config': ^1.0.1
@@ -42,6 +43,7 @@ dependencies:
 devDependencies:
   '@cypress/vite-dev-server': 2.2.2_vite@2.7.3
   '@cypress/vue': 3.1.0_cypress@9.2.0+vue@3.2.26
+  '@iconify-json/carbon': 1.0.12
   '@percy/cli': 1.0.0-beta.71
   '@percy/cypress': 3.1.1_cypress@9.2.0
   '@praburangki/eslint-config': 1.0.1_prettier@2.5.1+typescript@4.4.4
@@ -487,6 +489,12 @@ packages:
 
   /@humanwhocodes/object-schema/1.2.1:
     resolution: {integrity: sha512-ZnQMnLV4e7hDlUvw8H+U8ASL02SS2Gn6+9Ac3wGGLIe7+je2AeAOxPY+izIPJDfFDb7eDjev0Us8MO1iFRN8hA==}
+    dev: true
+
+  /@iconify-json/carbon/1.0.12:
+    resolution: {integrity: sha512-wqO/tnPis6BRxY9QP2Wqprfnb90dPr3O0LBkaG7e/nE5C7KySrLEweBoTn129muENM40wwHCJ6hqzXrmgfhH/A==}
+    dependencies:
+      '@iconify/types': 1.0.12
     dev: true
 
   /@iconify/types/1.0.12:

@@ -5,7 +5,7 @@ import viteSSR from 'vite-ssr/plugin.js';
 import dts from 'vite-plugin-dts';
 import { loadEnv, defineConfig } from 'vite';
 import Unocss from 'unocss/vite';
-import { presetUno } from 'unocss';
+import { presetUno, presetIcons } from 'unocss';
 
 const resolve = (file) => path.resolve(__dirname, file);
 
@@ -36,7 +36,7 @@ export default defineConfig(({ mode }) => {
       }),
 
       Unocss({
-        presets: [presetUno()],
+        presets: [presetUno(), presetIcons()],
       }),
     ],
 
