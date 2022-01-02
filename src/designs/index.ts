@@ -1,5 +1,19 @@
-import type { Preset } from '@unocss/core';
+import path from 'path';
+import fs from 'fs-extra';
+import postcss from 'postcss';
+import postcssImport from 'postcss-import';
+import cssnano from 'cssnano';
 
-export default (): Preset => ({
-  name: 'unocss-preset-vinicunca',
-});
+function buildCss() {
+  const inputPath = path.join(__dirname, 'styles', 'index.css');
+  const outputPath = 'dist/index.css';
+  const input = fs.readFileSync(inputPath);
+
+  postcss([postcssImport, cssnano])
+    .process(input, { from: inputPath })
+    .then((res) => {
+      fs.outputFileSync(outputPath, res.css);
+    });
+}
+
+buildCss();
