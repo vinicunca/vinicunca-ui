@@ -36,10 +36,7 @@ export default defineConfig(({ mode }) => {
       }),
 
       Unocss({
-        presets: [
-          presetUno(),
-          // ...custom presets
-        ],
+        presets: [presetUno()],
       }),
     ],
 

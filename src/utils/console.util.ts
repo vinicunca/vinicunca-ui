@@ -16,7 +16,7 @@ function createMessage(message: string, vm?: any, parent?: any): string | void {
     vm.$_alreadyWarned.push(message);
   }
 
-  return `[Heisenberg] ${message}${vm ? generateComponentTrace(vm) : ''}`;
+  return `[Vinicunca] ${message}${vm ? generateComponentTrace(vm) : ''}`;
 }
 
 export function consoleWarn(message: string, vm?: any, parent?: any): void {

@@ -1,6 +1,5 @@
 import path from 'path';
 import { startDevServer } from '@cypress/vite-dev-server';
-// import 'uno.css';
 
 const plugin: Cypress.PluginConfig = (on, config) => {
   on('dev-server:start', async (options) => {

@@ -10,8 +10,7 @@ export interface DefaultsInstance {
 
 export type DefaultsOptions = Partial<DefaultsInstance>;
 
-export const DefaultsSymbol: InjectionKey<Ref<DefaultsInstance>> =
-  Symbol.for('heisenberg:defaults');
+export const DefaultsSymbol: InjectionKey<Ref<DefaultsInstance>> = Symbol.for('vinicunca:defaults');
 
 export function createDefaults(options?: DefaultsInstance): Ref<DefaultsInstance> {
   return ref(options ?? {});
@@ -21,7 +20,7 @@ export function useDefaults() {
   const defaults = inject(DefaultsSymbol);
 
   if (!defaults) {
-    throw new Error('[Heisenberg] Could not find defaults instance');
+    throw new Error('[Vinicunca] Could not find defaults instance');
   }
 
   return defaults;
