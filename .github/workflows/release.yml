@@ -13,8 +13,8 @@ jobs:
     steps:
       - name: debug tokens
         run:
-          - echo ${{secrets.GITHUB_TOKEN}}
-          - echo ${{secrets.NPM_TOKEN}}
+          | echo ${{secrets.GITHUB_TOKEN}}
+          | echo ${{secrets.NPM_TOKEN}}
       # - uses: actions/checkout@v2
       #   with:
       #     fetch-depth: 0
