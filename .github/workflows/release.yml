@@ -36,10 +36,10 @@ jobs:
           CONVENTIONAL_GITHUB_RELEASER_TOKEN: ${{secrets.GITHUB_TOKEN}}
 
       - name: PNPM build
-        run: pnpm run build
+        run: pnpm --filter vinicunca-presets run build
 
       - name: Publish to NPM
         # run: pnpm -r publish --access public --no-git-checks
-        run: pnpm --filter presets --access public --no-git-checks
+        run: pnpm --filter vinicunca-presets --access public --no-git-checks
         env:
           NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
