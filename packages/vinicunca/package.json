@@ -1,5 +1,5 @@
 {
-  "name": "@vinicunca/lib",
+  "name": "vinicunca",
   "version": "0.0.0",
   "description": "UI Components for Vue 3",
   "license": "MIT",

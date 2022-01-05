@@ -7,7 +7,7 @@ import { defineComponent } from 'vue/dist/vue.esm-bundler';
 import { KEY_CODES } from '@praburangki/web-utilities';
 
 // Directives
-import { Ripple } from '../';
+import { Ripple } from '..';
 
 const testComponent = defineComponent({
   directives: { Ripple },
