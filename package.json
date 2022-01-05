@@ -1,7 +1,8 @@
 {
   "private": true,
   "scripts": {
-    "build": "pnpm -r run build"
+    "build": "pnpm -r run build",
+    "release": "pnpm -r --filter vinicunca-presets run publish --access public --no-git-checks"
   },
   "devDependencies": {
     "@praburangki/eslint-config": "^1.0.1",
