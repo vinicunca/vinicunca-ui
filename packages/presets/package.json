@@ -1,0 +1,44 @@
+{
+  "name": "vinicunca-presets",
+  "version": "0.0.0",
+  "description": "Vinicunca presets for UnoCSS",
+  "keywords": [
+    "unocss",
+    "unocss-preset"
+  ],
+  "homepage": "https://github.com/vinicunca/vinicunca",
+  "bugs": {
+    "url": "https://github.com/vinicunca/vinicunca/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vinicunca/vinicunca.git"
+  },
+  "license": "MIT",
+  "author": "praburangki<https://github.com/praburangki>",
+  "exports": {
+    ".": {
+      "require": "./dist/index.cjs",
+      "import": "./dist/index.mjs",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "unbuild",
+    "stub": "unbuild --stub",
+    "release": "bumpp package.json --commit --push --tag"
+  },
+  "dependencies": {
+    "@unocss/core": "^0.21.0",
+    "@unocss/preset-uno": "^0.21.0"
+  },
+  "devDependencies": {
+    "bumpp": "^7.1.1",
+    "prettier": "^2.5.1",
+    "unbuild": "^0.6.7"
+  }
+}
