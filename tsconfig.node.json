@@ -7,8 +7,8 @@
     "skipLibCheck": true
   },
   "include": [
-    "internal/**/*",
-    "internal/**/*.json",
+    "builds/**/*",
+    "builds/**/*.json",
     "scripts/**/*",
     "packages/vinicunca/version.ts",
     "packages/vinicunca/package.json"

@@ -1,0 +1,28 @@
+{
+  "name": "@vinicunca/build-metadata",
+  "version": "0.0.1",
+  "description": "Metadata for Vinicunca",
+  "keywords": [
+    "vinicunca"
+  ],
+  "license": "MIT",
+  "files": [
+    "dist"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "build": "run-p build:*",
+    "build:contributor": "tsx src/contributor.ts",
+    "build:components": "tsx src/components.ts",
+    "dev": "cross-env DEV=1 pnpm run build"
+  },
+  "devDependencies": {
+    "@vinicunca/build": "^0.0.1",
+    "@vinicunca/build-constants": "^0.0.1",
+    "@vinicunca/build-utils": "^0.0.1",
+    "cross-env": "^7.0.3",
+    "npm-run-all": "^4.1.5"
+  }
+}

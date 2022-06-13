@@ -1,0 +1,20 @@
+{
+  "name": "@vinicunca/build",
+  "version": "0.0.1",
+  "private": true,
+  "description": "Build Toolchain for Vinicunca",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "scripts": {
+    "start": "gulp --require @esbuild-kit/cjs-loader -f gulpfile.ts",
+    "dev": "pnpm run stub",
+    "stub": "unbuild --stub"
+  },
+  "peerDependencies": {
+    "vue": "^3.2.0"
+  },
+  "devDependencies": {
+    "unbuild": "^0.7.4"
+  }
+}
