@@ -46,6 +46,7 @@
     "vue": "^3.2.0"
   },
   "dependencies": {
+    "@vinicunca/js-utilities": "^1.2.0",
     "@vueuse/core": "^8.6.0",
     "dayjs": "^1.11.3"
   },

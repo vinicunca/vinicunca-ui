@@ -49,8 +49,8 @@ jobs:
         uses: pnpm/action-setup@v2
 
       - name: Gen npmrc
-        run: echo "//registry.npmjs.com/:_authToken=${{ secrets.NPM_TOKEN }}" >> ./.npmrc
+        run: echo "//registry.npmjs.com/:_authToken=${{ secrets.VINICUNCA_NPM_TOKEN }}" >> ./.npmrc
       - name: Build and publish
         run: sh ./scripts/publish.sh
         env:
-          NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
+          NODE_AUTH_TOKEN: ${{secrets.VINICUNCA_NPM_TOKEN}}
