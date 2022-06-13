@@ -1,1 +1,1 @@
-console.log('gen-version')
+console.log('🚀 ~ gen-version');

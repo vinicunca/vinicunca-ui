@@ -44,11 +44,18 @@
   "devDependencies": {
     "@commitlint/cli": "^17.0.2",
     "@commitlint/config-conventional": "^17.0.2",
+    "@types/node": "*",
     "@vinicunca/build": "workspace:^0.0.1",
     "@vinicunca/build-utils": "workspace:^0.0.1",
     "@vinicunca/eslint-config": "^1.2.7",
     "@vinicunca/js-utilities": "^1.1.0",
-    "@types/node": "*"
+    "concurrently": "^7.2.1",
+    "eslint": "^8.17.0",
+    "eslint-define-config": "^1.5.1",
+    "husky": "^8.0.1",
+    "lint-staged": "^13.0.0",
+    "tsx": "^3.4.2",
+    "typescript": "^4.7.3"
   },
   "engines": {
     "node": ">= 16"
