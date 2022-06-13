@@ -1,0 +1,10 @@
+html {
+  min-width: 320px;
+  height: 100%;
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+
+body {
+  height: 100%;
+}
