@@ -4,7 +4,7 @@
     "composite": true,
     "jsx": "preserve",
     "lib": ["ES2018", "DOM", "DOM.Iterable"],
-    "types": ["@vinicunca/js-utilities", "unplugin-vue-define-options"]
+    "types": ["unplugin-vue-define-options", "@vinicunca/js-utilities"]
   },
   "include": ["packages", "typings/components.d.ts", "typings/env.d.ts"],
   "exclude": [

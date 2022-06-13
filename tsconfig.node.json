@@ -3,14 +3,13 @@
   "compilerOptions": {
     "composite": true,
     "lib": ["ESNext"],
-    "types": ["node", "@vinicunca/js-utilities"],
+    "types": ["node"],
     "skipLibCheck": true
   },
   "include": [
     "internal/**/*",
     "internal/**/*.json",
     "scripts/**/*",
-    "packages/vinicunca/version.ts",
     "packages/vinicunca/package.json"
   ],
   "exclude": ["**/__tests__/**", "**/tests/**", "**/dist"]
