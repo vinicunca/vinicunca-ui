@@ -1,6 +1,6 @@
 {
   "name": "vinicunca",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "A Component Library for Vue 3",
   "keywords": [
     "vinicunca",
@@ -39,8 +39,7 @@
     "access": "public"
   },
   "style": "dist/index.css",
-  "scripts": {
-  },
+  "scripts": {},
   "peerDependencies": {
     "vue": "^3.2.0"
   }
