@@ -18,5 +18,5 @@ const style = computed<CSSProperties>(() => {
 </script>
 
 <template>
-  <i>hehe</i>
+  <i class="inline-flex">hehe</i>
 </template>

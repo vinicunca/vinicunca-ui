@@ -1,0 +1,15 @@
+{
+  "name": "@vinicunca/unocss",
+  "private": true,
+  "license": "MIT",
+  "main": "index.ts",
+  "scripts": {
+    "build": "unocss src/index.ts"
+  },
+  "dependencies": {
+    "unocss": "^0.39.0"
+  },
+  "devDependencies": {
+    "unbuild": "^0.7.4"
+  }
+}

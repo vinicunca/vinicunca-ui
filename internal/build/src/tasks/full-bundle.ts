@@ -2,7 +2,6 @@ import type { Plugin } from 'rollup';
 
 import path from 'path';
 
-import size from 'rollup-plugin-size';
 import { nodeResolve } from '@rollup/plugin-node-resolve';
 import { rollup } from 'rollup';
 import commonjs from '@rollup/plugin-commonjs';
@@ -57,7 +56,6 @@ async function buildFullEntry(minify: boolean) {
       treeShaking: true,
       legalComments: 'eof',
     }),
-    size(),
   ];
   if (minify) {
     plugins.push(minifyPlugin({ sourceMap: true }));

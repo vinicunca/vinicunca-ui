@@ -38,6 +38,7 @@
     "@vinicunca/constants": "workspace:*",
     "@vinicunca/js-utilities": "^1.2.0",
     "@vinicunca/locale": "workspace:*",
+    "@vinicunca/unocss": "workspace:*",
     "@vinicunca/utils": "workspace:*",
     "@vueuse/core": "^8.6.0",
     "dayjs": "^1.11.3"
@@ -82,7 +83,6 @@
     "puppeteer": "^14.3.0",
     "resize-observer-polyfill": "^1.5.1",
     "rimraf": "^3.0.2",
-    "rollup-plugin-size": "^0.2.2",
     "sass": "^1.52.2",
     "ts-morph": "^14.0.0",
     "tsx": "^3.4.2",

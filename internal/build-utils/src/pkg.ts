@@ -35,7 +35,7 @@ export function getPackageDependencies(
 }
 
 export function excludeFiles(files: string[]) {
-  const excludes = ['node_modules', 'test', 'mock', 'gulpfile', 'dist'];
+  const excludes = ['node_modules', 'test', 'mock', 'gulpfile', 'dist', 'unocss'];
   return files.filter(
     (path) => !excludes.some((exclude) => path.includes(exclude)),
   );
