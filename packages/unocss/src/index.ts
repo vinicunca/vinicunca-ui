@@ -1,4 +1,4 @@
-import type { UserConfig } from '@unocss/core';
+import type { UserConfig } from 'unocss';
 
 import { presetAttributify, presetIcons, presetUno, transformerDirectives, transformerVariantGroup } from 'unocss';
 

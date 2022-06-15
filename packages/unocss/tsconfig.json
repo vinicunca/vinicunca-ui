@@ -1,20 +1,14 @@
 {
   "compilerOptions": {
-    "target": "ESNext",
-    "module": "ESNext",
-    "esModuleInterop": true,
-    "skipLibCheck": true,
-    "moduleResolution": "Node",
-    "strict": false,
-    "allowJs": true,
-    "jsx": "preserve",
-    "noUnusedLocals": true,
+    "target": "esnext",
+    "module": "esnext",
+    "moduleResolution": "node",
     "resolveJsonModule": true,
-    "types": [
-      "node"
-    ]
-  },
-  "exclude": [
-    "./dist/*"
-  ]
+    "isolatedModules": true,
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "strict": true,
+    "sourceMap": true,
+    "skipLibCheck": true
+  }
 }

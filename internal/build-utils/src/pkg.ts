@@ -35,7 +35,7 @@ export function getPackageDependencies(
 }
 
 export function excludeFiles(files: string[]) {
-  const excludes = ['node_modules', 'test', 'mock', 'gulpfile', 'dist', 'unocss'];
+  const excludes = ['node_modules', 'test', 'mock', 'gulpfile', 'dist', 'unocss', 'unplugin-vue-components'];
   return files.filter(
     (path) => !excludes.some((exclude) => path.includes(exclude)),
   );

@@ -42,6 +42,7 @@
     "@vinicunca/js-utilities": "^1.2.0",
     "@vinicunca/locale": "workspace:*",
     "@vinicunca/unocss": "workspace:*",
+    "@vinicunca/unplugin-vue-components": "workspace:*",
     "@vinicunca/utils": "workspace:*",
     "@vueuse/core": "^8.6.0",
     "dayjs": "^1.11.3"

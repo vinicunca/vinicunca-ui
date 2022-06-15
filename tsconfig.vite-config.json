@@ -2,8 +2,8 @@
   "extends": "./tsconfig.node.json",
   "compilerOptions": {
     "composite": true,
-    "types": ["node", "vitest"]
+    "types": ["node"]
   },
-  "include": ["**/vite.config.*", "**/vitest.config.*", "**/vite.init.*"],
+  "include": ["**/vite.config.*", "**/vitest.config.*", "**/vite.init.*", "@vinicunca/unplugin-vue-components/*"],
   "exclude": ["docs"]
 }
