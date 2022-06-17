@@ -1,42 +1,41 @@
-// import type { UserConfig } from 'unocss';
+import type { UserConfig } from 'unocss';
 
-// import { presetAttributify, presetIcons, presetMini, transformerDirectives, transformerVariantGroup } from 'unocss';
+import { presetAttributify, presetIcons, presetMini, transformerDirectives, transformerVariantGroup } from 'unocss';
 
-// export function extendUnocssOptions(user: UserConfig = {}): UserConfig {
-//   const include = [
-//     /\.vue$/, /vinicunca\/es\/components/,
-//   ];
+export function extendUnocssOptions(user: UserConfig = {}): UserConfig {
+  const include = [
+    /\.vue$/, /vinicunca\/es\/components/,
+  ];
 
-//   if (user.include) {
-//     if (Array.isArray(user.include)) {
-//       include.push(...user.include);
-//     } else {
-//       include.push((user.include as any));
-//     }
-//   }
+  if (user.include) {
+    if (Array.isArray(user.include)) {
+      include.push(...user.include);
+    } else {
+      include.push((user.include as any));
+    }
+  }
 
-//   return {
-//     ...user,
+  return {
+    ...user,
 
-//     presets: [
-//       presetMini({
-//         variablePrefix: 'v-',
-//       }),
-//       presetAttributify(),
-//       presetIcons({
-//         prefix: '',
-//         scale: 1.2,
-//       }),
-//       ...(user.presets || []),
-//     ],
+    presets: [
+      presetMini({
+        variablePrefix: 'v-',
+      }),
+      presetAttributify(),
+      presetIcons({
+        prefix: '',
+        scale: 1.2,
+      }),
+      ...(user.presets || []),
+    ],
 
-//     transformers: [
-//       transformerDirectives(),
-//       transformerVariantGroup(),
-//     ],
+    transformers: [
+      transformerDirectives(),
+      transformerVariantGroup(),
+    ],
 
-//     include,
-//   };
-// }
+    include,
+  };
+}
 
-export const itu = 'qwe';

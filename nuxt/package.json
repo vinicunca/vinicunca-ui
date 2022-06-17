@@ -3,14 +3,31 @@
   "type": "module",
   "version": "1.0.0",
   "license": "MIT",
-  "main": "./index.cjs",
+  "exports": {
+    ".": {
+      "require": "./dist/module.cjs",
+      "import": "./dist/module.mjs"
+    }
+  },
+  "main": "./dist/module.cjs",
+  "types": "./dist/types.d.ts",
+  "files": [
+    "dist"
+  ],
   "scripts": {
-    "build": "unbuild"
+    "prepack": "nuxt-module-build",
+    "dev": "nuxi dev playground",
+    "dev:build": "nuxi build playground",
+    "dev:prepare": "nuxt-module-build --stub && nuxi prepare playground"
   },
   "dependencies": {
-    "@nuxt/kit": "^3.0.0-rc.4"
+    "@nuxt/kit": "^3.0.0-rc.4",
+    "@unocss/core": "^0.39.0",
+    "@unocss/vite": "^0.39.0",
+    "@unocss/webpack": "^0.39.0"
   },
   "devDependencies": {
-    "@nuxt/schema": "^3.0.0-rc.4"
+    "@nuxt/module-builder": "latest",
+    "nuxt": "^3.0.0-rc.4"
   }
 }

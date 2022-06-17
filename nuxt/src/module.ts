@@ -1,24 +1,64 @@
-import { resolve } from 'path'
-import { fileURLToPath } from 'url'
-import { defineNuxtModule, addPlugin } from '@nuxt/kit'
+import type { VinicuncaNuxtOptions } from './types';
 
-export interface ModuleOptions {
-  addPlugin: boolean
-}
+// TODO: uncomment when implementing components
+// import { dirname, resolve } from 'path';
+// import { fileURLToPath } from 'url';
 
-export default defineNuxtModule<ModuleOptions>({
+import { addPluginTemplate, defineNuxtModule, extendViteConfig, extendWebpackConfig } from '@nuxt/kit';
+import { extendUnocssOptions } from '@vinicunca/unocss';
+import WebpackPlugin from '@unocss/webpack';
+import VitePlugin from '@unocss/vite';
+
+// TODO: uncomment when implementing components
+// const dir = dirname(fileURLToPath(import.meta.url));
+
+export default defineNuxtModule<VinicuncaNuxtOptions>({
   meta: {
-    name: 'my-module',
-    configKey: 'myModule'
+    name: '@vinicunca/nuxt',
+    configKey: 'vinicunca',
   },
   defaults: {
-    addPlugin: true
+    unocss: {
+      autoImport: true,
+    },
   },
-  setup (options, nuxt) {
-    if (options.addPlugin) {
-      const runtimeDir = fileURLToPath(new URL('./runtime', import.meta.url))
-      nuxt.options.build.transpile.push(runtimeDir)
-      addPlugin(resolve(runtimeDir, 'plugin'))
+  setup(options) {
+    if (options.unocss.autoImport) {
+      addPluginTemplate({
+        filename: 'unocss.mjs',
+        getContents: () => {
+          const lines = [
+            'import \'uno.css\'',
+            'export default () => {};',
+          ];
+
+          return lines.join('\n');
+        },
+      });
     }
+
+    options.unocss = extendUnocssOptions(options.unocss);
+
+    extendViteConfig((config) => {
+      config.plugins = config.plugins || [];
+      config.plugins.unshift(...VitePlugin({}, options.unocss));
+    });
+
+    extendWebpackConfig((config) => {
+      config.plugins = config.plugins || [];
+      config.plugins.unshift(WebpackPlugin({}, options.unocss));
+    });
+
+    // TODO: uncomment when implementing components
+    // addPlugin(resolve(dir, 'runtime', 'plugin'));
+  },
+});
+
+declare module '@nuxt/schema' {
+  interface NuxtConfig {
+    vinicunca?: VinicuncaNuxtOptions;
   }
-})
+  interface NuxtOptions {
+    vinicunca?: VinicuncaNuxtOptions;
+  }
+}

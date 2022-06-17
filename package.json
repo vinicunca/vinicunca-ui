@@ -43,6 +43,7 @@
     "@vinicunca/constants": "workspace:*",
     "@vinicunca/js-utilities": "^1.2.0",
     "@vinicunca/locale": "workspace:*",
+    "@vinicunca/nuxt": "workspace:*",
     "@vinicunca/unocss": "workspace:*",
     "@vinicunca/unplugin-vue-components": "workspace:*",
     "@vinicunca/utils": "workspace:*",
