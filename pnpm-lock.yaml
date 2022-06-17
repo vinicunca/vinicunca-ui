@@ -211,6 +211,7 @@ importers:
       '@unocss/vite': ^0.39.0
       '@unocss/webpack': ^0.39.0
       nuxt: ^3.0.0-rc.4
+      unbuild: ^0.7.4
     dependencies:
       '@nuxt/kit': 3.0.0-rc.4
       '@unocss/core': 0.39.0
@@ -219,6 +220,7 @@ importers:
     devDependencies:
       '@nuxt/module-builder': 0.1.7
       nuxt: 3.0.0-rc.4
+      unbuild: 0.7.4
 
   packages/components:
     specifiers: {}

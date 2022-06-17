@@ -1,6 +1,6 @@
 import type { UserConfig } from 'unocss';
 
-import { presetAttributify, presetIcons, presetMini, transformerDirectives, transformerVariantGroup } from 'unocss';
+import { presetIcons, transformerDirectives, transformerVariantGroup } from 'unocss';
 
 export function extendUnocssOptions(user: UserConfig = {}): UserConfig {
   const include = [
@@ -19,10 +19,6 @@ export function extendUnocssOptions(user: UserConfig = {}): UserConfig {
     ...user,
 
     presets: [
-      presetMini({
-        variablePrefix: 'v-',
-      }),
-      presetAttributify(),
       presetIcons({
         prefix: '',
         scale: 1.2,
