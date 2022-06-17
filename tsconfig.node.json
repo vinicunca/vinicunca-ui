@@ -10,7 +10,9 @@
     "internal/**/*",
     "internal/**/*.json",
     "scripts/**/*",
-    "packages/vinicunca/package.json"
+    "packages/vinicunca/package.json",
+    "unocss/**/*",
+    "unplugin-vue-components/**/*"
   ],
   "exclude": ["**/__tests__/**", "**/tests/**", "**/dist"]
 }

@@ -1,0 +1,16 @@
+{
+  "name": "@vinicunca/nuxt",
+  "type": "module",
+  "version": "1.0.0",
+  "license": "MIT",
+  "main": "./index.cjs",
+  "scripts": {
+    "build": "unbuild"
+  },
+  "dependencies": {
+    "@nuxt/kit": "^3.0.0-rc.4"
+  },
+  "devDependencies": {
+    "@nuxt/schema": "^3.0.0-rc.4"
+  }
+}

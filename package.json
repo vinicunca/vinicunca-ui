@@ -11,7 +11,9 @@
   },
   "scripts": {
     "build": "pnpm run -C internal/build start",
-    "build:all": "pnpm run build && pnpm run -C packages/unplugin-vue-components build && pnpm run -C packages/unocss build",
+    "build:all": "pnpm run build && pnpm run build:unocss && pnpm run build:unplugin",
+    "build:unocss": "pnpm run -C unocss build",
+    "build:unplugin": "pnpm run -C unplugin-vue-components build",
     "clean": "pnpm run clean:dist",
     "clean:dist": "rimraf dist",
     "cz": "git-cz",
@@ -92,6 +94,7 @@
     "tsx": "^3.4.2",
     "type-fest": "^2.13.1",
     "typescript": "^4.7.3",
+    "unbuild": "^0.7.4",
     "unplugin-vue-define-options": "^0.6.1",
     "vitest": "0.12.6",
     "vue": "^3.2.37",

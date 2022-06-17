@@ -4,6 +4,8 @@
   "private": true,
   "license": "MIT",
   "main": "./dist/index.cjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
   "scripts": {
     "build": "unbuild",
     "dev": "pnpm run stub",
