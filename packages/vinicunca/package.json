@@ -2,6 +2,15 @@
   "name": "vinicunca",
   "version": "0.1.1",
   "description": "A Component Library for Vue 3",
+  "license": "MIT",
+  "homepage": "https://vinicunca.dev/",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vinicunca/vinicunca-ui.git"
+  },
+  "bugs": {
+    "url": "https://github.com/vinicunca/vinicunca-ui/issues"
+  },
   "keywords": [
     "vinicunca",
     "component library",
@@ -9,19 +18,9 @@
     "ui",
     "vue"
   ],
-  "homepage": "https://vinicunca.dev/",
-  "bugs": {
-    "url": "https://github.com/vinicunca/vinicunca-ui/issues"
-  },
-  "license": "MIT",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/vinicunca/vinicunca-ui.git"
-  },
-  "main": "lib/index.js",
-  "module": "es/index.mjs",
-  "unpkg": "dist/index.full.js",
-  "jsdelivr": "dist/index.full.js",
+  "sideEffects": [
+    "dist/*"
+  ],
   "exports": {
     ".": {
       "require": "./lib/index.js",
@@ -33,15 +32,18 @@
     "./es/*": "./es/*.mjs",
     "./lib/*.js": "./lib/*.js",
     "./lib/*": "./lib/*.js",
+    "./unplugin-vue-components": "./unplugin-vue-components/index.cjs",
+    "./unocss": "./unocss/index.cjs",
     "./*": "./*"
   },
+  "main": "lib/index.js",
+  "module": "es/index.mjs",
+  "unpkg": "dist/index.full.js",
+  "jsdelivr": "dist/index.full.js",
   "publishConfig": {
     "access": "public"
   },
   "style": "dist/index.css",
-  "sideEffects": [
-    "dist/*"
-  ],
   "peerDependencies": {
     "vue": "^3.2.0"
   },

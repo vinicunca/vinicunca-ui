@@ -11,7 +11,7 @@
   },
   "scripts": {
     "build": "pnpm run -C internal/build start",
-    "build:theme": "pnpm run -C packages/designs build",
+    "build:all": "pnpm run build && pnpm run -C packages/unplugin-vue-components build && pnpm run -C packages/unocss build",
     "clean": "pnpm run clean:dist",
     "clean:dist": "rimraf dist",
     "cz": "git-cz",

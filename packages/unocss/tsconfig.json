@@ -7,8 +7,21 @@
     "isolatedModules": true,
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
-    "strict": true,
+    "strict": false,
     "sourceMap": true,
-    "skipLibCheck": true
-  }
+    "skipLibCheck": true,
+    "lib": [
+      "es5", "es6", "dom", "dom.iterable"
+    ],
+    "allowJs": true,
+    "jsx": "preserve",
+    "noUnusedLocals": true,
+    "types": [
+      "node"
+    ]
+  },
+  "exclude": [
+    "./dist/*"
+  ]
 }
+

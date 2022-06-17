@@ -1,12 +1,14 @@
 import path from 'path';
 
 import { defineConfig } from 'vite';
+import Unocss from 'unocss/vite';
 import { pkgRoot, vinRoot } from '@vinicunca/build-utils';
 import vue from '@vitejs/plugin-vue';
 import vueJsx from '@vitejs/plugin-vue-jsx';
 import DefineOptions from 'unplugin-vue-define-options/vite';
 import Components from 'unplugin-vue-components/vite';
 import { VinicuncaResolver } from '@vinicunca/unplugin-vue-components';
+import { extendUnocssOptions } from '@vinicunca/unocss';
 
 export default defineConfig({
   server: {
@@ -34,6 +36,9 @@ export default defineConfig({
       include: path.resolve(__dirname, '**'),
       resolvers: VinicuncaResolver(),
       dts: false,
+    }),
+    Unocss({
+      ...extendUnocssOptions(),
     }),
   ],
 

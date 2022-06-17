@@ -5,11 +5,11 @@ import { computed } from 'vue';
 
 import { iconProps } from './icon';
 
+const props = defineProps(iconProps);
 defineOptions({
   name: 'VIcon',
   inheritAttrs: false,
 });
-const props = defineProps(iconProps);
 const ns = {};
 
 const style = computed<CSSProperties>(() => {
@@ -18,5 +18,5 @@ const style = computed<CSSProperties>(() => {
 </script>
 
 <template>
-  <i class="inline-flex">hehe</i>
+  <i class="block mt-47 text-red">hehe</i>
 </template>

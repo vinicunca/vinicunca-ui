@@ -4,11 +4,12 @@
   "private": true,
   "license": "MIT",
   "main": "./dist/index.cjs",
-  "module": "./dist/index.mjs",
-  "types": "./dist/index.d.ts",
   "scripts": {
     "build": "unbuild",
     "dev": "pnpm run stub",
-    "stub": "unbuild --stub"
+    "stub": "UNBUILD_ENV=dev unbuild --stub"
+  },
+  "devDependencies": {
+    "unplugin-vue-components": "^0.19.6"
   }
 }

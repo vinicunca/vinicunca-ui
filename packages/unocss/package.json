@@ -2,9 +2,13 @@
   "name": "@vinicunca/unocss",
   "private": true,
   "license": "MIT",
-  "main": "index.ts",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
   "scripts": {
-    "build": "unbuild"
+    "build": "unbuild",
+    "dev": "pnpm run stub",
+    "stub": "UNBUILD_ENV=dev unbuild --stub"
   },
   "dependencies": {
     "unocss": "^0.39.0"

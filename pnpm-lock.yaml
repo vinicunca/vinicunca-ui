@@ -218,7 +218,10 @@ importers:
       unbuild: 0.7.4
 
   packages/unplugin-vue-components:
-    specifiers: {}
+    specifiers:
+      unplugin-vue-components: ^0.19.6
+    devDependencies:
+      unplugin-vue-components: 0.19.6
 
   packages/utils:
     specifiers: {}
@@ -243,6 +246,7 @@ importers:
   play:
     specifiers:
       '@vitejs/plugin-vue': ^2.3.3
+      ohmyfetch: ^0.4.18
       unplugin-vue-components: ^0.19.6
       vite: ^2.9.12
       vue: ^3.2.37
@@ -250,6 +254,7 @@ importers:
       vue: 3.2.37
     devDependencies:
       '@vitejs/plugin-vue': 2.3.3_vite@2.9.12+vue@3.2.37
+      ohmyfetch: 0.4.18
       unplugin-vue-components: 0.19.6_vite@2.9.12+vue@3.2.37
       vite: 2.9.12
 
@@ -11279,6 +11284,37 @@ packages:
     transitivePeerDependencies:
       - supports-color
       - vite
+    dev: true
+
+  /unplugin-vue-components/0.19.6:
+    resolution: {integrity: sha512-APvrJ9Hpid1MLT0G4PWerMJgARhNw6dzz0pcCwCxaO2DR7VyvDacMqjOQNC6ukq7FSw3wzD8VH+9i3EFXwkGmw==}
+    engines: {node: '>=14'}
+    peerDependencies:
+      '@babel/parser': ^7.15.8
+      '@babel/traverse': ^7.15.4
+      vue: 2 || 3
+    peerDependenciesMeta:
+      '@babel/parser':
+        optional: true
+      '@babel/traverse':
+        optional: true
+    dependencies:
+      '@antfu/utils': 0.5.2
+      '@rollup/pluginutils': 4.2.1
+      chokidar: 3.5.3
+      debug: 4.3.4
+      fast-glob: 3.2.11
+      local-pkg: 0.4.1
+      magic-string: 0.26.2
+      minimatch: 5.1.0
+      resolve: 1.22.0
+      unplugin: 0.6.3
+    transitivePeerDependencies:
+      - esbuild
+      - rollup
+      - supports-color
+      - vite
+      - webpack
     dev: true
 
   /unplugin-vue-components/0.19.6_vite@2.9.12+vue@3.2.37:
