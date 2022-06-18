@@ -9,7 +9,8 @@
   "scripts": {
     "build": "unbuild",
     "dev": "pnpm run stub",
-    "stub": "UNBUILD_ENV=dev unbuild --stub"
+    "stub": "UNBUILD_ENV=dev unbuild --stub",
+    "test": "vitest"
   },
   "dependencies": {
     "@unocss/core": "^0.39.3"
