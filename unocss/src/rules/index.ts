@@ -2,7 +2,7 @@
 // export * from './behaviors';
 // export * from './border';
 // export * from './color';
-// export * from './default';
+export * from './default';
 // export * from './flex';
 // export * from './gap';
 // export * from './grid';
@@ -17,6 +17,6 @@ export * from './static';
 // export * from './svg';
 export * from './transform';
 // export * from './transition';
-// export * from './typography';
+export * from './typography';
 // export * from './variables';
 // export * from './decoration';
