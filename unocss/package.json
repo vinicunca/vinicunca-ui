@@ -12,6 +12,7 @@
     "stub": "UNBUILD_ENV=dev unbuild --stub"
   },
   "dependencies": {
+    "@unocss/core": "^0.39.0",
     "unocss": "^0.39.0"
   },
   "devDependencies": {

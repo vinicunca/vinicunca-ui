@@ -266,9 +266,11 @@ importers:
 
   unocss:
     specifiers:
+      '@unocss/core': ^0.39.0
       unbuild: ^0.7.4
       unocss: ^0.39.0
     dependencies:
+      '@unocss/core': 0.39.0
       unocss: 0.39.0
     devDependencies:
       unbuild: 0.7.4

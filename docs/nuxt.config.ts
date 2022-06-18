@@ -1,5 +1,5 @@
 // TODO: uncomment when implementing components
-// import path from 'path';
+import path from 'path';
 
 // import { projRoot } from '@vinicunca/build-utils';
 // import DefineOptions from 'unplugin-vue-define-options/vite';
@@ -8,6 +8,10 @@ import VinicuncaModule from '@vinicunca/nuxt';
 
 // https://v3.nuxtjs.org/api/configuration/nuxt.config
 export default defineNuxtConfig({
+  css: [
+    path.resolve('../unocss/styles/reset.css'),
+  ],
+
   modules: [
     VinicuncaModule,
   ],

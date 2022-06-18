@@ -2,6 +2,8 @@ import type { UserConfig } from 'unocss';
 
 import { presetIcons, transformerDirectives, transformerVariantGroup } from 'unocss';
 
+import { presetVinicunca } from './presets';
+
 export function extendUnocssOptions(user: UserConfig = {}): UserConfig {
   const include = [
     /\.vue$/, /vinicunca\/es\/components/,
@@ -19,6 +21,7 @@ export function extendUnocssOptions(user: UserConfig = {}): UserConfig {
     ...user,
 
     presets: [
+      presetVinicunca(),
       presetIcons({
         prefix: '',
         scale: 1.2,
