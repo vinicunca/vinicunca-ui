@@ -16,6 +16,39 @@ export default defineNuxtConfig({
     VinicuncaModule,
   ],
 
+  vinicunca: {
+    presetWebFonts: {
+      provider: 'google',
+      fonts: {
+        'sans': [
+          {
+            name: 'Inter',
+            weights: '100..900',
+            preflightHtml: true,
+          },
+        ],
+        'mono': [
+          {
+            name: 'Fira Code',
+            weights: '300..700',
+          },
+        ],
+        'source': [
+          {
+            name: 'Source Sans Pro',
+            weights: [400],
+          },
+        ],
+        'ubuntu-mono': [
+          {
+            name: 'Ubuntu Mono',
+            weights: [700],
+          },
+        ],
+      },
+    },
+  },
+
   // TODO: uncomment when implementing components
   // vite: {
   //   resolve: {

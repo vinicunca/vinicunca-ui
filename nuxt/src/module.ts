@@ -37,7 +37,10 @@ export default defineNuxtModule<VinicuncaNuxtOptions>({
       });
     }
 
-    options.unocss = extendUnocssOptions(options.unocss);
+    options.unocss = extendUnocssOptions({
+      config: options.unocss,
+      webFontsConfig: options.presetWebFonts,
+    });
 
     extendViteConfig((config) => {
       config.plugins = config.plugins || [];

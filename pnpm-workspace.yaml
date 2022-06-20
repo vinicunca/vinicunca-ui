@@ -6,3 +6,4 @@ packages:
   - unocss
   - unplugin-vue-components
   - nuxt
+  - preset-web-fonts

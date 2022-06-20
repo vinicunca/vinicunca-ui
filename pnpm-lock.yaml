@@ -23,6 +23,7 @@ importers:
       '@vinicunca/js-utilities': ^1.2.0
       '@vinicunca/locale': workspace:*
       '@vinicunca/nuxt': workspace:*
+      '@vinicunca/preset-web-fonts': workspace:*
       '@vinicunca/unocss': workspace:*
       '@vinicunca/unplugin-vue-components': workspace:*
       '@vinicunca/utils': workspace:*
@@ -71,6 +72,7 @@ importers:
       '@vinicunca/js-utilities': 1.2.0
       '@vinicunca/locale': link:packages/locale
       '@vinicunca/nuxt': link:nuxt
+      '@vinicunca/preset-web-fonts': link:preset-web-fonts
       '@vinicunca/unocss': link:unocss
       '@vinicunca/unplugin-vue-components': link:unplugin-vue-components
       '@vinicunca/utils': link:packages/utils
@@ -265,6 +267,14 @@ importers:
       '@vitejs/plugin-vue': 2.3.3_vite@2.9.12+vue@3.2.37
       unplugin-vue-components: 0.19.6_vite@2.9.12+vue@3.2.37
       vite: 2.9.12
+
+  preset-web-fonts:
+    specifiers:
+      '@unocss/core': ^0.39.3
+      ohmyfetch: ^0.4.18
+    dependencies:
+      '@unocss/core': 0.39.3
+      ohmyfetch: 0.4.18
 
   unocss:
     specifiers:
@@ -8124,7 +8134,6 @@ packages:
 
   /node-fetch-native/0.1.3:
     resolution: {integrity: sha512-Jf1IQZdovUIv9E+5avmN6Sf+bND+rnMlODnBQhdE2VRyuWP9WgqZb/KEgPekh19DAN1X2C4vbS1VCOaz2OH19g==}
-    dev: true
 
   /node-fetch/2.6.7:
     resolution: {integrity: sha512-ZjMPFEfVx5j+y2yF35Kzx5sF7kDzxuDj6ziH4FFbOp87zKDZNx8yExJIb05OGF4Nlt9IHFIMBkRl41VdvcNdbQ==}
@@ -8509,7 +8518,6 @@ packages:
       node-fetch-native: 0.1.3
       ufo: 0.8.4
       undici: 5.5.1
-    dev: true
 
   /on-finished/2.4.1:
     resolution: {integrity: sha512-oVlzkg3ENAhCk2zdv7IJwd/QUD4z2RxRwpkcGY8psCVcCYZNq4wYnVWALHM+brtuJjePWiYF/ClmuDr8Ch5+kg==}
@@ -11327,7 +11335,6 @@ packages:
   /undici/5.5.1:
     resolution: {integrity: sha512-MEvryPLf18HvlCbLSzCW0U00IMftKGI5udnjrQbC5D4P0Hodwffhv+iGfWuJwg16Y/TK11ZFK8i+BPVW2z/eAw==}
     engines: {node: '>=12.18'}
-    dev: true
 
   /unenv/0.5.2:
     resolution: {integrity: sha512-dojYcCqOFEWZosvqWs/AEaEfM/tLJexMKBW0ebkn6JKfEnYR5fKxbYJB8QV9kAPXV/ENseeWQkv6uJ3KCXz+1g==}

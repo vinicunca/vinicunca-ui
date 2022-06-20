@@ -1,4 +1,5 @@
 import type { UserConfig } from '@unocss/core';
+import type { WebFontsOptions } from '@vinicunca/preset-web-fonts';
 
 interface UnoCssOptions extends UserConfig {
   /**
@@ -8,6 +9,7 @@ interface UnoCssOptions extends UserConfig {
    */
   autoImport?: boolean;
 
+  // TODO: haven't been implemented yet
   /**
    * Injecting `vinicuna/styles/reset.css` entry
    *
@@ -17,5 +19,6 @@ interface UnoCssOptions extends UserConfig {
 }
 
 export interface VinicuncaNuxtOptions {
-  unocss: UnoCssOptions;
+  unocss?: UnoCssOptions;
+  presetWebFonts?: WebFontsOptions;
 }
