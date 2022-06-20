@@ -9,6 +9,11 @@ export interface WebFontMeta {
    * @default <matches root config>
    */
   provider?: WebFontsProviders;
+  /**
+   * Set the base html font-family on preflight
+   */
+  preflightHtml?: boolean;
+  themeKey?: string;
 }
 
 export interface WebFontsOptions {
@@ -46,7 +51,6 @@ export interface WebFontsOptions {
 
 export interface Provider {
   name: WebFontsProviders;
-  getPreflight?(fonts: WebFontMeta[]): string;
   getImportUrl?(fonts: WebFontMeta[]): string | undefined;
   getFontName(font: WebFontMeta): string;
 }

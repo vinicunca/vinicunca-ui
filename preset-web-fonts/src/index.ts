@@ -10,9 +10,13 @@ export * from './types';
 
 const layerName = '__webfonts__';
 
-export function normalizedFontMeta(meta: WebFontMeta | string, defaultProvider: WebFontsProviders): WebFontMeta {
+export function normalizedFontMeta(
+  { meta, defaultProvider, themeKey }:
+  { meta: WebFontMeta | string; defaultProvider: WebFontsProviders; themeKey: string }): WebFontMeta {
   if (typeof meta !== 'string') {
     meta.provider = meta.provider ?? defaultProvider;
+    meta.themeKey = themeKey;
+
     return meta;
   }
 
@@ -21,7 +25,22 @@ export function normalizedFontMeta(meta: WebFontMeta | string, defaultProvider: 
     name,
     weights: weights.split(/[,;]\s*/).filter(Boolean),
     provider: defaultProvider,
+    themeKey,
   };
+}
+
+function getPreflightHtml({ fonts, themeKey, theme }: { fonts: WebFontMeta[]; themeKey: string; theme: any }) {
+  const fontPreflightHtml = fonts.find((_font) => _font.preflightHtml);
+
+  if (fontPreflightHtml) {
+    const fontTheme = theme[themeKey][fontPreflightHtml.themeKey!];
+
+    return `html {
+      font-family: ${fontTheme};
+    }`;
+  }
+
+  return '';
 }
 
 const providers = {
@@ -39,7 +58,7 @@ export function presetWebFonts(options: WebFontsOptions = {}): Preset<any> {
 
   const fontObject = Object.fromEntries(
     Object.entries(options.fonts || {})
-      .map(([name, meta]) => [name, toArray(meta).map((_meta) => normalizedFontMeta(_meta, defaultProvider))]),
+      .map(([name, meta]) => [name, toArray(meta).map((_meta) => normalizedFontMeta({ meta: _meta, defaultProvider, themeKey: name }))]),
   );
 
   const fonts = Object.values(fontObject).flatMap((_font) => _font);
@@ -71,7 +90,7 @@ export function presetWebFonts(options: WebFontsOptions = {}): Preset<any> {
     layers: { [layerName]: -40 },
     preflights: [
       {
-        async getCSS() {
+        async getCSS({ theme }) {
           const names = new Set(fonts.map((_font) => _font.provider || defaultProvider));
           const preflights: (string | undefined)[] = [];
 
@@ -86,7 +105,9 @@ export function presetWebFonts(options: WebFontsOptions = {}): Preset<any> {
               }
             }
 
-            preflights.push(provider.getPreflight?.(fontsForProvider));
+            if (extendTheme) {
+              preflights.push(getPreflightHtml({ fonts: fontsForProvider, themeKey, theme }));
+            }
           }
 
           return preflights.filter(Boolean).join('\n');

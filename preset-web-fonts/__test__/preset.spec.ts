@@ -14,6 +14,7 @@ const options: WebFontsOptions = {
       {
         name: 'Inter',
         weights: '100..900',
+        preflightHtml: true,
       },
     ],
     mono: ['Fira Code', 'Fira Mono:400,700'],
@@ -68,4 +69,5 @@ test('web-fonts (inline: true)', async () => {
 
   const { css } = await uno.generate(classes);
   expect(css).toContain('@font-face');
+  expect(css).toContain('html {');
 });
