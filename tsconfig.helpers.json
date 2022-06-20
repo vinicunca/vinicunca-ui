@@ -21,7 +21,8 @@
     ]
   },
   "include": [
-    "unocss/**/*"
+    "unocss/**/*",
+    "preset-web-fonts/**/*"
   ],
   "exclude": [
     "**/dist"
