@@ -1,9 +1,10 @@
+export * from './border';
 export * from './color';
 export * from './default';
-// export * from './filters';
-// export * from './font';
+export * from './font';
 export * from './layout';
-// export * from './misc';
-// export * from './size';
-// export * from './preflight';
+export * from './shadow';
+export * from './size';
+export * from './preflight';
+export * from './transition';
 export * from './types';

@@ -1,10 +1,11 @@
-import type { ParsedColorValue, RuleContext } from '@unocss/core';
+import type { ParsedColorValue, Rule, RuleContext, VariantContext } from '@unocss/core';
 import type { Theme } from '../theme';
 
 import { toArray } from '@vinicunca/js-utilities';
 
 import { handler } from './handlers';
 import { colorOpacityToString, colorToString, getComponents, parseCssColor } from './colors';
+import { GLOBAL_KEYWORDS } from './mappings';
 
 /**
  * Obtain color from theme by camel-casing colors.
@@ -165,3 +166,38 @@ export function colorableShadows(shadows: string | string[], colorVar: string) {
   }
   return colored;
 }
+
+export const hasParseableColor = (color: string | undefined, theme: Theme) => {
+  return color != null && !!parseColor(color, theme)?.color;
+};
+
+export const resolveBreakpoints = ({ theme, generator }: Readonly<VariantContext<Theme>>) => {
+  let breakpoints: Record<string, string> | undefined;
+  if (generator.userConfig && generator.userConfig.theme) {
+    breakpoints = (generator.userConfig.theme as any).breakpoints;
+  }
+
+  if (!breakpoints) {
+    breakpoints = theme.breakpoints;
+  }
+
+  return breakpoints;
+};
+
+export const resolveVerticalBreakpoints = ({ theme, generator }: Readonly<VariantContext<Theme>>) => {
+  let verticalBreakpoints: Record<string, string> | undefined;
+  if (generator.userConfig && generator.userConfig.theme) {
+    verticalBreakpoints = (generator.userConfig.theme as any).verticalBreakpoints;
+  }
+
+  if (!verticalBreakpoints) {
+    verticalBreakpoints = theme.verticalBreakpoints;
+  }
+
+  return verticalBreakpoints;
+};
+
+export const makeGlobalStaticRules = (prefix: string, property?: string) => {
+  return GLOBAL_KEYWORDS.map((keyword) => [`${prefix}-${keyword}`, { [property ?? prefix]: keyword }] as Rule);
+};
+

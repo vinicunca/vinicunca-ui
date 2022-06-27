@@ -2,6 +2,7 @@ import type { Rule } from '@unocss/core';
 
 import { bgColors, opacity, textColors } from './color';
 import { insets, positions, zIndexes } from './position';
+import { aspectRatio, sizes } from './size';
 import { fontSmoothings, fonts } from './typography';
 
 export const rules: Rule[] = [
@@ -33,8 +34,8 @@ export const rules: Rule[] = [
   // grids,
   // gaps,
   positions,
-  // sizes,
-  // aspectRatio,
+  sizes,
+  aspectRatio,
   // cursors,
   // appearances,
   // pointerEvents,

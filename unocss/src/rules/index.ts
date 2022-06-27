@@ -11,7 +11,7 @@ export * from './position';
 // export * from './question-mark';
 export * from './ring';
 export * from './shadow';
-// export * from './size';
+export * from './size';
 // export * from './spacing';
 export * from './static';
 // export * from './svg';
