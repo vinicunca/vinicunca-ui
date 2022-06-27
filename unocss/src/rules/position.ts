@@ -51,3 +51,11 @@ export const insets: Rule[] = [
     ([_, d, v], ctx) => ({ [d]: handleInsetValue(v, ctx) }),
   ],
 ];
+
+export const zIndexes: Rule[] = [
+  [
+    /^z-(.+)$/,
+    ([_, v]) => ({ 'z-index': handler.bracket.cssvar.global.auto.number(v) }),
+    { autocomplete: 'z-<num>' },
+  ],
+];
