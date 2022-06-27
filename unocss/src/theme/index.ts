@@ -2,6 +2,7 @@ export * from './color';
 export * from './default';
 // export * from './filters';
 // export * from './font';
+export * from './layout';
 // export * from './misc';
 // export * from './size';
 // export * from './preflight';

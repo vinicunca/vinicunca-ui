@@ -1,7 +1,7 @@
 import type { Rule } from '@unocss/core';
 
 import { bgColors, opacity, textColors } from './color';
-import { positions } from './position';
+import { insets, positions } from './position';
 import { fontSmoothings, fonts } from './typography';
 
 export const rules: Rule[] = [
@@ -50,7 +50,7 @@ export const rules: Rule[] = [
   // justifies,
   // alignments,
   // placements,
-  // insets,
+  insets,
   // floats,
   // zIndexes,
   // boxSizing,
