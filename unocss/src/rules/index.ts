@@ -7,7 +7,7 @@ export * from './default';
 // export * from './gap';
 // export * from './grid';
 // export * from './layout';
-// export * from './position';
+export * from './position';
 // export * from './question-mark';
 export * from './ring';
 export * from './shadow';
