@@ -43,6 +43,8 @@ const description = ref('');
     </Head>
 
     <Body class="antialiased text-slate-500 dark:text-slate-400">
+      <AppHeader />
+
       <NuxtPage />
     </Body>
   </Html>
