@@ -3,6 +3,7 @@
 // export * from './border';
 export * from './color';
 export * from './default';
+export * from './filter';
 // export * from './flex';
 // export * from './gap';
 // export * from './grid';
