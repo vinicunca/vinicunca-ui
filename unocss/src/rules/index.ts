@@ -13,7 +13,7 @@ export * from './position';
 export * from './ring';
 export * from './shadow';
 export * from './size';
-// export * from './spacing';
+export * from './spacing';
 export * from './static';
 // export * from './svg';
 export * from './transform';

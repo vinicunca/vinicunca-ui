@@ -5,6 +5,7 @@ import { bgColors, opacity, textColors } from './color';
 import { filters } from './filter';
 import { insets, positions, zIndexes } from './position';
 import { aspectRatio, sizes } from './size';
+import { margins, paddings } from './spacing';
 import { transitions } from './transition';
 import { fontSmoothings, fonts } from './typography';
 
@@ -24,7 +25,7 @@ export const rules: Rule[] = [
   // orders,
   // grids,
   // floats,
-  // margins,
+  margins,
   // boxSizing,
   // displays,
   aspectRatio,
@@ -58,7 +59,7 @@ export const rules: Rule[] = [
   // backgroundStyles,
   // svgUtilities,
   // objectPositions,
-  // paddings,
+  paddings,
   // textAligns,
   // textIndents,
   // verticalAligns,

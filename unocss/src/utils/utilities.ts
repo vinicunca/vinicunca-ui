@@ -1,11 +1,27 @@
-import type { ParsedColorValue, Rule, RuleContext, VariantContext } from '@unocss/core';
+import type { CSSEntries, ParsedColorValue, Rule, RuleContext, VariantContext } from '@unocss/core';
 import type { Theme } from '../theme';
 
 import { toArray } from '@vinicunca/js-utilities';
 
 import { handler } from './handlers';
 import { colorOpacityToString, colorToString, getComponents, parseCssColor } from './colors';
-import { GLOBAL_KEYWORDS } from './mappings';
+import { DIRECTION_MAP, GLOBAL_KEYWORDS } from './mappings';
+
+/**
+ * Provide {@link DynamicMatcher} function returning spacing definition. See spacing rules.
+ *
+ * @param {string} propertyPrefix - Property for the css value to be created. Postfix will be appended according to direction matched.
+ * @return {@link DynamicMatcher} object.
+ * @see {@link directionMap}
+ */
+export function directionSize(propertyPrefix: string) {
+  return ([_, direction, size]: string[], { theme }: RuleContext<Theme>): CSSEntries | undefined => {
+    const v = theme.spacing?.[size || 'DEFAULT'] ?? handler.bracket.cssvar.global.auto.fraction.rem(size);
+    if (v != null) {
+      return DIRECTION_MAP[direction].map((i) => [`${propertyPrefix}${i}`, v]);
+    }
+  };
+}
 
 /**
  * Obtain color from theme by camel-casing colors.
