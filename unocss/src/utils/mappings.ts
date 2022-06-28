@@ -1,5 +1,3 @@
-/* eslint-disable sonarjs/no-duplicate-string */
-
 export const GLOBAL_KEYWORDS = [
   'inherit',
   'initial',
@@ -36,4 +34,32 @@ export const INSET_MAP: Dictionary<string[]> = {
   ie: ['-inset-inline-end'],
   block: ['-inset-block-start', '-inset-block-end'],
   inline: ['-inset-inline-start', '-inset-inline-end'],
+};
+
+export const CORNER_MAP: Dictionary<string[]> = {
+  'l': ['-top-left', '-bottom-left'],
+  'r': ['-top-right', '-bottom-right'],
+  't': ['-top-left', '-top-right'],
+  'b': ['-bottom-left', '-bottom-right'],
+  'tl': ['-top-left'],
+  'lt': ['-top-left'],
+  'tr': ['-top-right'],
+  'rt': ['-top-right'],
+  'bl': ['-bottom-left'],
+  'lb': ['-bottom-left'],
+  'br': ['-bottom-right'],
+  'rb': ['-bottom-right'],
+  '': [''],
+  'bs': ['-start-start', '-start-end'],
+  'be': ['-end-start', '-end-end'],
+  'is': ['-end-start', '-start-start'],
+  'ie': ['-start-end', '-end-end'],
+  'bs-is': ['-start-start'],
+  'is-bs': ['-start-start'],
+  'bs-ie': ['-start-end'],
+  'ie-bs': ['-start-end'],
+  'be-is': ['-end-start'],
+  'is-be': ['-end-start'],
+  'be-ie': ['-end-end'],
+  'ie-be': ['-end-end'],
 };

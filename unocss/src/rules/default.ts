@@ -1,5 +1,6 @@
 import type { Rule } from '@unocss/core';
 
+import { borders } from './border';
 import { bgColors, opacity, textColors } from './color';
 import { filters } from './filter';
 import { insets, positions, zIndexes } from './position';
@@ -52,7 +53,7 @@ export const rules: Rule[] = [
   // textOverflows,
   // whitespaces,
   // wordBreaks,
-  // borders,
+  borders,
   bgColors,
   // backgroundStyles,
   // svgUtilities,

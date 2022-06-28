@@ -1,6 +1,6 @@
 // export * from './align';
 // export * from './behaviors';
-// export * from './border';
+export * from './border';
 export * from './color';
 export * from './default';
 export * from './filter';

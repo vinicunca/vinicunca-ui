@@ -15,6 +15,7 @@ module.exports = defineConfig({
       files: ['unocss/**/*.*'],
       rules: {
         'sonarjs/no-nested-template-literals': 'off',
+        'sonarjs/no-duplicate-string': 'off',
       },
     },
   ],
