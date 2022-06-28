@@ -4,6 +4,7 @@ import type { Theme, ThemeAnimation } from './theme';
 import { preflights } from './preflights';
 import { rules } from './rules';
 import { theme } from './theme';
+import { variants } from './variants';
 
 export type { ThemeAnimation, Theme };
 
@@ -30,7 +31,7 @@ export function presetVinicunca(options: PresetVinicuncaOptions = {}): Preset<Th
     name: '@vinicunca/unocss-preset',
     theme,
     rules,
-    // variants: variants(options),
+    variants: variants(options),
     options,
     postprocess: options.variablePrefix && options.variablePrefix !== 'un-'
       ? VarPrefixPostprocessor(options.variablePrefix)

@@ -9,4 +9,13 @@ module.exports = defineConfig({
     // TODO: REMOVE THIS
     'no-console': 'off',
   },
+
+  overrides: [
+    {
+      files: ['unocss/**/*.*'],
+      rules: {
+        'sonarjs/no-nested-template-literals': 'off',
+      },
+    },
+  ],
 });
