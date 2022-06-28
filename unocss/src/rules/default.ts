@@ -4,6 +4,7 @@ import { bgColors, opacity, textColors } from './color';
 import { filters } from './filter';
 import { insets, positions, zIndexes } from './position';
 import { aspectRatio, sizes } from './size';
+import { transitions } from './transition';
 import { fontSmoothings, fonts } from './typography';
 
 export const rules: Rule[] = [
@@ -85,7 +86,7 @@ export const rules: Rule[] = [
   // rings,
   // imageRenderings,
   filters,
-  // transitions,
+  transitions,
   // willChange,
   // contents,
   // placeholders,

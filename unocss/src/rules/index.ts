@@ -17,7 +17,7 @@ export * from './size';
 export * from './static';
 // export * from './svg';
 export * from './transform';
-// export * from './transition';
+export * from './transition';
 export * from './typography';
 // export * from './variables';
 // export * from './decoration';
