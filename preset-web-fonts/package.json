@@ -36,7 +36,7 @@
     "test": "vitest"
   },
   "dependencies": {
-    "@unocss/core": "^0.39.3",
+    "@unocss/core": "^0.42.0",
     "ohmyfetch": "^0.4.18"
   }
 }

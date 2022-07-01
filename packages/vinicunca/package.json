@@ -49,13 +49,14 @@
   },
   "dependencies": {
     "@vinicunca/js-utilities": "^1.2.0",
-    "@vueuse/core": "^8.6.0",
+    "@vueuse/core": "^8.7.5",
     "dayjs": "^1.11.3"
   },
   "devDependencies": {
     "@types/node": "*",
+    "cypress": "^10.3.0",
     "vue": "^3.2.37",
-    "vue-router": "^4.0.15"
+    "vue-router": "^4.0.16"
   },
   "vetur": {
     "tags": "tags.json",

@@ -23,9 +23,9 @@
   },
   "dependencies": {
     "@nuxt/kit": "^3.0.0-rc.4",
-    "@unocss/core": "^0.41.1",
-    "@unocss/vite": "^0.41.1",
-    "@unocss/webpack": "^0.41.1"
+    "@unocss/core": "^0.42.0",
+    "@unocss/vite": "^0.42.0",
+    "@unocss/webpack": "^0.42.0"
   },
   "devDependencies": {
     "@nuxt/module-builder": "latest",
