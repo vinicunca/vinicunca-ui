@@ -72,7 +72,7 @@ export const filters: Rule<Theme>[] = [
     /^(?:filter-)?drop-shadow-color-(.+)$/, colorResolver('--vin-drop-shadow-color', 'drop-shadow'),
   ],
   [
-    /^(?:filter-)?drop-shadow-color-op(?:acity)?-?(.+)$/, ([, opacity]) => ({ '--vin-drop-shadow-opacity': handler.bracket.percent(opacity) }),
+    /^(?:filter-)?drop-shadow-color-op(?:acity)?-?(.+)$/, ([_, opacity]) => ({ '--vin-drop-shadow-opacity': handler.bracket.percent(opacity) }),
   ],
   [
     /^(?:(backdrop-)|filter-)?grayscale(?:-(.+))?$/, toFilter('grayscale', percentWithDefault), { autocomplete: ['(backdrop|filter)-grayscale', '(backdrop|filter)-grayscale-<percent>', 'grayscale-<percent>'] },

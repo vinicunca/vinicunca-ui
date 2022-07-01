@@ -3,7 +3,7 @@ import type { Theme } from '../theme';
 
 import { CORNER_MAP, DIRECTION_MAP, GLOBAL_KEYWORDS, colorOpacityToString, colorToString, handler, hasParseableColor, parseColor } from '../utils';
 
-const borderStyles = ['solid', 'dashed', 'dotted', 'double', 'hidden', 'none', 'groove', 'ridge', 'inset', 'outset', ...GLOBAL_KEYWORDS];
+export const borderStyles = ['solid', 'dashed', 'dotted', 'double', 'hidden', 'none', 'groove', 'ridge', 'inset', 'outset', ...GLOBAL_KEYWORDS];
 
 export const borders: Rule[] = [
   // compound
@@ -136,14 +136,14 @@ function borderColorResolver(direction: string) {
   };
 }
 
-function handlerBorderOpacity([, a = '', opacity]: string[]): CSSEntries | undefined {
+function handlerBorderOpacity([_, a = '', opacity]: string[]): CSSEntries | undefined {
   const v = handler.bracket.percent(opacity);
   if (a in DIRECTION_MAP && v != null) {
     return DIRECTION_MAP[a].map((i) => [`--vin-border${i}-opacity`, v]);
   }
 }
 
-function handlerRounded([, a = '', s]: string[], { theme }: RuleContext<Theme>): CSSEntries | undefined {
+function handlerRounded([_, a = '', s]: string[], { theme }: RuleContext<Theme>): CSSEntries | undefined {
   const v = theme.borderRadius?.[s || 'DEFAULT'] || handler.bracket.cssvar.global.fraction.rem(s || '1');
   if (a in CORNER_MAP && v != null) {
     return CORNER_MAP[a].map((i) => [`border${i}-radius`, v]);

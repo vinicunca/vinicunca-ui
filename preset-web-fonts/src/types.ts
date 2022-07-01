@@ -26,7 +26,7 @@ export interface WebFontsOptions {
   /**
    * The fonts
    */
-  fonts?: Record<string, WebFontMeta | string | (WebFontMeta | string)[]>;
+  fonts?: Dictionary<WebFontMeta | string | (WebFontMeta | string)[]>;
 
   /**
    * Extend the theme object

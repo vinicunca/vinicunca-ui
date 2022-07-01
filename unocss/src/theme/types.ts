@@ -52,6 +52,10 @@ export interface Theme {
   gridRow?: Dictionary<string>;
   gridTemplateColumn?: Dictionary<string>;
   gridTemplateRow?: Dictionary<string>;
+  // container
+  container?: {
+    center?: boolean;
+  };
   // vars
   /** Used to generate CSS variables placeholder in preflight */
   preflightBase?: Dictionary<string | number>;

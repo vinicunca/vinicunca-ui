@@ -7,12 +7,14 @@ import { handler } from './handlers';
 import { colorOpacityToString, colorToString, getComponents, parseCssColor } from './colors';
 import { DIRECTION_MAP, GLOBAL_KEYWORDS } from './mappings';
 
+export const CONTROL_MINI_NO_NEGATIVE = '$$mini-no-negative';
+
 /**
  * Provide {@link DynamicMatcher} function returning spacing definition. See spacing rules.
  *
  * @param {string} propertyPrefix - Property for the css value to be created. Postfix will be appended according to direction matched.
  * @return {@link DynamicMatcher} object.
- * @see {@link directionMap}
+ * @see {@link DIRECTION_MAP}
  */
 export function directionSize(propertyPrefix: string) {
   return ([_, direction, size]: string[], { theme }: RuleContext<Theme>): CSSEntries | undefined => {
@@ -188,7 +190,7 @@ export const hasParseableColor = (color: string | undefined, theme: Theme) => {
 };
 
 export const resolveBreakpoints = ({ theme, generator }: Readonly<VariantContext<Theme>>) => {
-  let breakpoints: Record<string, string> | undefined;
+  let breakpoints: Dictionary<string> | undefined;
   if (generator.userConfig && generator.userConfig.theme) {
     breakpoints = (generator.userConfig.theme as any).breakpoints;
   }
@@ -201,7 +203,7 @@ export const resolveBreakpoints = ({ theme, generator }: Readonly<VariantContext
 };
 
 export const resolveVerticalBreakpoints = ({ theme, generator }: Readonly<VariantContext<Theme>>) => {
-  let verticalBreakpoints: Record<string, string> | undefined;
+  let verticalBreakpoints: Dictionary<string> | undefined;
   if (generator.userConfig && generator.userConfig.theme) {
     verticalBreakpoints = (generator.userConfig.theme as any).verticalBreakpoints;
   }

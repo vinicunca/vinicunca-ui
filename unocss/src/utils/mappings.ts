@@ -63,3 +63,45 @@ export const CORNER_MAP: Dictionary<string[]> = {
   'be-ie': ['-end-end'],
   'ie-be': ['-end-end'],
 };
+
+const BASE_POSITION_MAP = [
+  'top',
+  'top center',
+  'top left',
+  'top right',
+  'bottom',
+  'bottom center',
+  'bottom left',
+  'bottom right',
+  'left',
+  'left center',
+  'left top',
+  'left bottom',
+  'right',
+  'right center',
+  'right top',
+  'right bottom',
+  'center',
+  'center top',
+  'center bottom',
+  'center left',
+  'center right',
+  'center center',
+];
+
+export const POSITION_MAP: Dictionary<string> = Object.assign(
+  {},
+
+  // [{ top: 'top' }, { 'top-center': 'top center' }, ...]
+  ...BASE_POSITION_MAP.map((p) => ({ [p.replace(/ /, '-')]: p })),
+
+  // [{ t: 'top' }, { tc: 'top center' }, ...]
+  ...BASE_POSITION_MAP.map((p) => ({ [p.replace(/\b(\w)\w+/g, '$1').replace(/ /, '')]: p })),
+);
+
+export const XYZ_MAP: Dictionary<string[]> = {
+  'x': ['-x'],
+  'y': ['-y'],
+  'z': ['-z'],
+  '': ['-x', '-y'],
+};
