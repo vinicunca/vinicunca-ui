@@ -18,7 +18,8 @@
     "noUnusedLocals": true,
     "types": [
       "node"
-    ]
+    ],
+    "composite": true
   },
   "include": [
     "unocss/**/*",

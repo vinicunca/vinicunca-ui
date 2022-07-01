@@ -4,13 +4,18 @@
     "composite": true,
     "jsx": "preserve",
     "lib": ["ES2018", "DOM", "DOM.Iterable"],
-    "types": ["unplugin-vue-define-options", "@vinicunca/js-utilities"]
+    "types": ["unplugin-vue-define-options", "@vinicunca/js-utilities", "cypress"]
   },
-  "include": ["packages", "typings/components.d.ts", "typings/env.d.ts"],
+  "include": [
+    "packages",
+    "typings/components.d.ts",
+    "typings/env.d.ts",
+    "typings/cypress.d.ts",
+    "play"
+  ],
   "exclude": [
     "node_modules",
     "**/dist",
-    "**/__tests__/**/*",
     "**/gulpfile.ts",
     "**/test-helper",
     "packages/test-utils"

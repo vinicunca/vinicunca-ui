@@ -39,6 +39,7 @@ importers:
       commitizen: ^4.2.4
       concurrently: ^7.2.1
       consola: ^2.15.3
+      cypress: ^10.3.0
       cz-git: ^1.3.4
       dayjs: ^1.11.3
       eslint: ^8.18.0
@@ -102,6 +103,7 @@ importers:
       commitizen: 4.2.4
       concurrently: 7.2.2
       consola: 2.15.3
+      cypress: 10.3.0
       cz-git: 1.3.5
       eslint: 8.18.0
       eslint-define-config: 1.5.1
@@ -241,7 +243,6 @@ importers:
       '@types/node': '*'
       '@vinicunca/js-utilities': ^1.2.0
       '@vueuse/core': ^8.7.5
-      cypress: ^10.3.0
       dayjs: ^1.11.3
       vue: ^3.2.37
       vue-router: ^4.0.16
@@ -251,7 +252,6 @@ importers:
       dayjs: 1.11.3
     devDependencies:
       '@types/node': 18.0.0
-      cypress: 10.3.0
       vue: 3.2.37
       vue-router: 4.0.16_vue@3.2.37
 

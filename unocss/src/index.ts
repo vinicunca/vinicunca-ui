@@ -9,7 +9,7 @@ import { presetWebFonts } from '@vinicunca/preset-web-fonts';
 
 import { presetVinicunca } from './presets';
 
-export function extendUnocssOptions({ config = {}, webFontsConfig }: { config: UserConfig; webFontsConfig?: WebFontsOptions }): UserConfig<Theme> {
+export function extendUnocssOptions({ config = {}, webFontsConfig }: { config?: UserConfig; webFontsConfig?: WebFontsOptions } = {}): UserConfig<Theme> {
   const include = [
     /\.vue$/, /vinicunca\/es\/components/,
   ];
