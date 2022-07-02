@@ -16,6 +16,7 @@
     "build:unplugin": "pnpm run -C unplugin-vue-components build",
     "clean": "pnpm run clean:dist",
     "clean:dist": "rimraf dist",
+    "cy:open": "pnpm -C packages/components cy:open",
     "cz": "git-cz",
     "dev": "pnpm -C play dev",
     "docs:build": "pnpm run -C docs build",

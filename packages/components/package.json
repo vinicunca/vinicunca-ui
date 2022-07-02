@@ -2,12 +2,15 @@
   "name": "@vinicunca/components",
   "version": "0.0.1",
   "description": "all components are settled here",
+  "sideEffects": false,
   "main": "index.ts",
   "module": "index.ts",
-  "types": "index.d.ts",
   "unpkg": "index.js",
   "jsdelivr": "index.js",
-  "sideEffects": false,
+  "types": "index.d.ts",
+  "scripts": {
+    "cy:open": "cypress open --component -b chrome"
+  },
   "peerDependencies": {
     "vue": "^3.2.0"
   }

@@ -6,7 +6,7 @@ export default defineConfig({
       framework: 'vue',
       bundler: 'vite',
     },
-    specPattern: '../**/*.spec.cy.{ts,tsx}',
+    // specPattern: '../**/*.spec.cy.{ts,tsx}',
     supportFile: './cypress/support/index.ts',
   },
 });

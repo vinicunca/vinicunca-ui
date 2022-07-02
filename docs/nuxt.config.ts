@@ -48,6 +48,14 @@ export default defineNuxtConfig({
         ],
       },
     },
+
+    unocss: {
+      theme: {
+        maxWidth: {
+          '8xl': '90rem',
+        },
+      },
+    },
   },
 
   // TODO: uncomment when implementing components
