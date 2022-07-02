@@ -1,7 +1,7 @@
-import { isClient } from '@vueuse/core';
+import { isBrowser } from '@vinicunca/js-utilities';
 
 const globalNodes: HTMLElement[] = [];
-let target: HTMLElement = !isClient ? (undefined as any) : document.body;
+let target: HTMLElement = !isBrowser ? (undefined as any) : document.body;
 
 export function createGlobalNode(id?: string) {
   const el = document.createElement('div');

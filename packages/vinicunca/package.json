@@ -40,6 +40,10 @@
   "module": "es/index.mjs",
   "unpkg": "dist/index.full.js",
   "jsdelivr": "dist/index.full.js",
+  "scripts": {
+    "cy:open": "cypress open --component -b chrome",
+    "dev": "vite"
+  },
   "publishConfig": {
     "access": "public"
   },
@@ -49,22 +53,14 @@
   },
   "dependencies": {
     "@vinicunca/js-utilities": "^1.2.0",
-    "@vueuse/core": "^8.7.5",
     "dayjs": "^1.11.3"
   },
   "devDependencies": {
+    "@iconify-json/carbon": "^1.1.6",
     "@types/node": "*",
+    "@unocss/preset-icons": "^0.42.0",
+    "cypress": "^10.3.0",
     "vue": "^3.2.37",
     "vue-router": "^4.0.16"
-  },
-  "vetur": {
-    "tags": "tags.json",
-    "attributes": "attributes.json"
-  },
-  "web-types": "web-types.json",
-  "browserslist": [
-    "> 1%",
-    "not ie 11",
-    "not op_mini all"
-  ]
+  }
 }

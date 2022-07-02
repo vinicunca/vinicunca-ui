@@ -1,4 +1,4 @@
-import { VIcon } from '../';
+import { VIcon } from '..';
 
 describe('icon.spec.cy.ts', () => {
   it('playground', () => {

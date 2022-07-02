@@ -18,5 +18,5 @@ const style = computed<CSSProperties>(() => {
 </script>
 
 <template>
-  <i class="block mt-47 text-red">hehe</i>
+  <i class="block mt-47 text-red i-carbon-sun">hehe</i>
 </template>

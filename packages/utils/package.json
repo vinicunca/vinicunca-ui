@@ -1,9 +1,0 @@
-{
-  "name": "@vinicunca/utils",
-  "private": true,
-  "license": "MIT",
-  "main": "index.ts",
-  "peerDependencies": {
-    "vue": "^3.2.0"
-  }
-}

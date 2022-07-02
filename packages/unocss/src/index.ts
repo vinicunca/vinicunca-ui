@@ -25,7 +25,6 @@ export function extendUnocssOptions({ config = {}, webFontsConfig }: { config?: 
   const presets = [
     presetVinicunca(),
     presetIcons({
-      prefix: '',
       scale: 1.2,
     }),
   ];

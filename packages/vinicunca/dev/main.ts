@@ -1,9 +1,10 @@
 import 'uno.css';
 
 import { createApp } from 'vue';
+import Vinicunca from 'vinicunca';
 
 import App from './src/App.vue';
 
 const app = createApp(App);
 
-app.mount('#play');
+app.use(Vinicunca).mount('#app');

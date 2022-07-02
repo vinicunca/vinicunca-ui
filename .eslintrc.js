@@ -5,9 +5,6 @@ module.exports = defineConfig({
 
   rules: {
     'sonarjs/cognitive-complexity': 'off',
-
-    // TODO: REMOVE THIS
-    'no-console': 'off',
   },
 
   overrides: [

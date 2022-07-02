@@ -1,7 +1,7 @@
 import type { ExtractPropTypes } from 'vue';
 import type Icon from './icon.vue';
 
-import { buildProps, definePropType } from '@vinicunca/utils';
+import { buildProps, definePropType } from '~/utils';
 
 export const iconProps = buildProps({
   size: {

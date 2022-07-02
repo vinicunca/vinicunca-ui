@@ -1,6 +1,6 @@
-import type { App, Plugin } from '@vue/runtime-core';
+import type { App, Plugin } from 'vue';
 
-import { INSTALLED_KEY } from '@vinicunca/constants';
+import { INSTALLED_KEY } from '~/constants';
 
 export const makeInstaller = (components: Plugin[] = []) => {
   const install = (app: App) => {

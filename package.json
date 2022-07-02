@@ -3,7 +3,6 @@
   "packageManager": "pnpm@7.4.1",
   "workspaces": [
     "packages/*",
-    "play",
     "docs"
   ],
   "engines": {
@@ -16,7 +15,7 @@
     "build:unplugin": "pnpm run -C unplugin-vue-components build",
     "clean": "pnpm run clean:dist",
     "clean:dist": "rimraf dist",
-    "cy:open": "pnpm -C packages/components cy:open",
+    "cy:open": "pnpm -C packages/vinicunca cy:open",
     "cz": "git-cz",
     "dev": "pnpm -C play dev",
     "docs:build": "pnpm run -C docs build",
@@ -40,17 +39,11 @@
     "vue": "^3.2.0"
   },
   "dependencies": {
-    "@vinicunca/components": "workspace:*",
-    "@vinicunca/constants": "workspace:*",
     "@vinicunca/js-utilities": "^1.2.0",
-    "@vinicunca/locale": "workspace:*",
     "@vinicunca/nuxt": "workspace:*",
     "@vinicunca/preset-web-fonts": "workspace:*",
     "@vinicunca/unocss": "workspace:*",
-    "@vinicunca/unplugin-vue-components": "workspace:*",
-    "@vinicunca/utils": "workspace:*",
-    "@vueuse/core": "^8.7.5",
-    "dayjs": "^1.11.3"
+    "@vinicunca/unplugin-vue-components": "workspace:*"
   },
   "devDependencies": {
     "@commitlint/cli": "^17.0.2",
@@ -78,7 +71,6 @@
     "commitizen": "^4.2.4",
     "concurrently": "^7.2.1",
     "consola": "^2.15.3",
-    "cypress": "^10.3.0",
     "cz-git": "^1.3.4",
     "eslint": "^8.18.0",
     "eslint-define-config": "^1.5.1",
