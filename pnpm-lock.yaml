@@ -53,7 +53,6 @@ importers:
       type-fest: ^2.15.1
       typescript: ^4.7.3
       unbuild: ^0.7.4
-      unplugin-vue-define-options: ^0.6.1
       vitest: ^0.16.0
       vue: ^3.2.37
       vue-router: ^4.0.16
@@ -109,7 +108,6 @@ importers:
       type-fest: 2.15.1
       typescript: 4.7.4
       unbuild: 0.7.4
-      unplugin-vue-define-options: 0.6.1_vue@3.2.37
       vitest: 0.16.0_tz5f7ka4yxvutsrggsglsdukxy
       vue: 3.2.37
       vue-router: 4.0.16_vue@3.2.37
@@ -249,6 +247,7 @@ importers:
       '@vinicunca/js-utilities': ^1.2.0
       cypress: ^10.3.0
       dayjs: ^1.11.3
+      unplugin-vue-define-options: ^0.6.1
       vue: ^3.2.37
       vue-router: ^4.0.16
     dependencies:
@@ -259,6 +258,7 @@ importers:
       '@types/node': 18.0.0
       '@unocss/preset-icons': 0.42.0
       cypress: 10.3.0
+      unplugin-vue-define-options: 0.6.1_vue@3.2.37
       vue: 3.2.37
       vue-router: 4.0.16_vue@3.2.37
 

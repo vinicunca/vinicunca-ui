@@ -42,7 +42,9 @@
   "jsdelivr": "dist/index.full.js",
   "scripts": {
     "cy:open": "cypress open --component -b chrome",
-    "dev": "vite"
+    "dev": "vite",
+    "test": "vitest",
+    "test:coverage": "vitest --coverage"
   },
   "publishConfig": {
     "access": "public"
@@ -60,6 +62,7 @@
     "@types/node": "*",
     "@unocss/preset-icons": "^0.42.0",
     "cypress": "^10.3.0",
+    "unplugin-vue-define-options": "^0.6.1",
     "vue": "^3.2.37",
     "vue-router": "^4.0.16"
   }

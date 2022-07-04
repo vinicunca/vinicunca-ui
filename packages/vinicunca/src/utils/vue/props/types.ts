@@ -1,4 +1,4 @@
-import type { epPropKey } from './runtime';
+import type { vinPropKey } from './runtime';
 import type { ExtractPropTypes, PropType } from 'vue';
 import type { IfNever, UnknownToNever, WritableArray } from './util';
 
@@ -6,8 +6,6 @@ type Value<T> = T[keyof T];
 
 /**
  * Extract the type of a single prop
- *
- * 提取单个 prop 的参数类型
  *
  * @example
  * ExtractPropType<{ type: StringConstructor }> => string | undefined
@@ -23,7 +21,6 @@ export type ExtractPropType<T extends object> = Value<
 /**
  * Extracts types via `ExtractPropTypes`, accepting `PropType<T>`, `XXXConstructor`, `never`...
  *
- * 通过 `ExtractPropTypes` 提取类型，接受 `PropType<T>`、`XXXConstructor`、`never`...
  *
  * @example
  * ResolvePropType<BooleanConstructor> => boolean
@@ -40,23 +37,20 @@ export type ResolvePropType<T> = IfNever<
 
 /**
  * Merge Type, Value, Validator types
- * 合并 Type、Value、Validator 的类型
  *
  * @example
- * EpPropMergeType<StringConstructor, '1', 1> =>  1 | "1" // ignores StringConstructor
- * EpPropMergeType<StringConstructor, never, number> =>  string | number
+ * VinPropMergeType<StringConstructor, '1', 1> =>  1 | "1" // ignores StringConstructor
+ * VinPropMergeType<StringConstructor, never, number> =>  string | number
  */
-export type EpPropMergeType<Type, Value, Validator> =
+export type VinPropMergeType<Type, Value, Validator> =
   | IfNever<UnknownToNever<Value>, ResolvePropType<Type>, never>
   | UnknownToNever<Value>
   | UnknownToNever<Validator>;
 
 /**
  * Handling default values for input (constraints)
- *
- * 处理输入参数的默认值（约束）
  */
-export type EpPropInputDefault<
+export type VinPropInputDefault<
   Required extends boolean,
   Default,
 > = Required extends true
@@ -67,8 +61,6 @@ export type EpPropInputDefault<
 
 /**
  * Native prop types, e.g: `BooleanConstructor`, `StringConstructor`, `null`, `undefined`, etc.
- *
- * 原生 prop `类型，BooleanConstructor`、`StringConstructor`、`null`、`undefined` 等
  */
 export type NativePropType =
   | ((...args: any) => any)
@@ -80,10 +72,8 @@ export type IfNativePropType<T, Y, N> = [T] extends [NativePropType] ? Y : N;
 /**
  * input prop `buildProp` or `buildProps` (constraints)
  *
- * prop 输入参数（约束）
- *
  * @example
- * EpPropInput<StringConstructor, 'a', never, never, true>
+ * VinPropInput<StringConstructor, 'a', never, never, true>
  * ⬇️
  * {
     type?: StringConstructor | undefined;
@@ -93,27 +83,25 @@ export type IfNativePropType<T, Y, N> = [T] extends [NativePropType] ? Y : N;
     default?: undefined;
   }
  */
-export interface EpPropInput<
+export interface VinPropInput<
   Type,
   Value,
   Validator,
-  Default extends EpPropMergeType<Type, Value, Validator>,
+  Default extends VinPropMergeType<Type, Value, Validator>,
   Required extends boolean,
 > {
   type?: Type;
   required?: Required;
   values?: readonly Value[];
   validator?: ((val: any) => val is Validator) | ((val: any) => boolean);
-  default?: EpPropInputDefault<Required, Default>;
+  default?: VinPropInputDefault<Required, Default>;
 }
 
 /**
  * output prop `buildProp` or `buildProps`.
  *
- * prop 输出参数。
- *
  * @example
- * EpProp<'a', 'b', true>
+ * VinProp<'a', 'b', true>
  * ⬇️
  * {
     readonly type: PropType<"a">;
@@ -123,40 +111,36 @@ export interface EpPropInput<
     __epPropKey: true;
   }
  */
-export type EpProp<Type, Default, Required> = {
+export type VinProp<Type, Default, Required> = {
   readonly type: PropType<Type>;
   readonly required: [Required] extends [true] ? true : false;
   readonly validator: ((val: unknown) => boolean) | undefined;
-  [epPropKey]: true;
+  [vinPropKey]: true;
 } & IfNever<Default, unknown, { readonly default: Default }>;
 
 /**
- * Determine if it is `EpProp`
+ * Determine if it is `VinProp`
  */
-export type IfEpProp<T, Y, N> = T extends { [epPropKey]: true } ? Y : N;
+export type IfVinProp<T, Y, N> = T extends { [vinPropKey]: true } ? Y : N;
 
 /**
  * Converting input to output.
- *
- * 将输入转换为输出
  */
-export type EpPropConvert<Input> = Input extends EpPropInput<
+export type VinPropConvert<Input> = Input extends VinPropInput<
   infer Type,
   infer Value,
   infer Validator,
   any,
   infer Required
 >
-  ? EpPropFinalized<Type, Value, Validator, Input['default'], Required>
+  ? VinPropFinalized<Type, Value, Validator, Input['default'], Required>
   : never;
 
 /**
  * Finalized conversion output
- *
- * 最终转换 EpProp
  */
-export type EpPropFinalized<Type, Value, Validator, Default, Required> = EpProp<
-  EpPropMergeType<Type, Value, Validator>,
+export type VinPropFinalized<Type, Value, Validator, Default, Required> = VinProp<
+  VinPropMergeType<Type, Value, Validator>,
   UnknownToNever<Default>,
   Required
 >;
