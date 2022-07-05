@@ -1,5 +1,3 @@
-import { ref } from 'vue';
-
 import VOverlay from '../src/overlay';
 
 const AXIOM = 'Humans are evil';
@@ -34,26 +32,5 @@ describe('VOverlay', () => {
     //   expect(wrapper.emitted('click')).to.have.length;
     // });
     // cy.get('@onClickSpy').should('have.been.called');
-  });
-
-  it('no mask', async () => {
-    const mask = ref(true);
-    mountWrapper({ mask: mask.value });
-    // const wrapper = mount(() => <Overlay mask={ mask.value }>{ AXIOM }</Overlay>);
-
-    // const selector = '.el-overlay';
-    // expect(wrapper.find(selector).exists()).toBe(true);
-
-    // mask.value = false;
-
-    // await nextTick();
-
-    // expect(wrapper.find(selector).exists()).toBe(false);
-
-    // mask.value = true;
-
-    // await nextTick();
-
-    // expect(wrapper.find(selector).exists()).toBe(true);
   });
 });

@@ -16,9 +16,10 @@ module.exports = defineConfig({
       },
     },
     {
-      files: ['*.spec.cy.*'],
+      files: ['*.spec.*'],
       rules: {
         'no-unused-expressions': 'off',
+        'sonarjs/no-duplicate-string': 'off',
       },
     },
   ],
