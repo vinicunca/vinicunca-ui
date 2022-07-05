@@ -245,6 +245,7 @@ importers:
       '@types/node': '*'
       '@unocss/preset-icons': ^0.42.0
       '@vinicunca/js-utilities': ^1.2.0
+      csstype: ^2.6.20
       cypress: ^10.3.0
       dayjs: ^1.11.3
       unplugin-vue-define-options: ^0.6.1
@@ -257,6 +258,7 @@ importers:
       '@iconify-json/carbon': 1.1.6
       '@types/node': 18.0.0
       '@unocss/preset-icons': 0.42.0
+      csstype: 2.6.20
       cypress: 10.3.0
       unplugin-vue-define-options: 0.6.1_vue@3.2.37
       vue: 3.2.37

@@ -31,5 +31,11 @@ module.exports = defineConfig({
         'sonarjs/no-duplicate-string': 'off',
       },
     },
+    {
+      files: ['*.spec.cy.*'],
+      rules: {
+        'no-unused-expressions': 'off',
+      },
+    },
   ],
 });

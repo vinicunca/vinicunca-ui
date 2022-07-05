@@ -11,7 +11,10 @@ import { presetVinicunca } from './presets';
 
 export function extendUnocssOptions({ config = {}, webFontsConfig }: { config?: UserConfig; webFontsConfig?: WebFontsOptions } = {}): UserConfig<Theme> {
   const include = [
-    /\.vue$/, /vinicunca\/es\/components/,
+    /\.vue$/,
+    /vinicunca\/es\/components/,
+    /\.ts$/,
+    /\.tsx$/,
   ];
 
   if (config.include) {
