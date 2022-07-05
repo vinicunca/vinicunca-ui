@@ -5,7 +5,7 @@ import type { ConfigProviderContext } from '~/tokens';
 import { computed, getCurrentInstance, inject, provide, ref, unref } from 'vue';
 import { objectKeys } from '@vinicunca/js-utilities';
 
-import { configProviderContextKey } from '~/tokens';
+import { INJECTION_KEY_CONFIG_PROVIDER } from '~/tokens';
 import { debugWarn } from '~/utils/error';
 
 const globalConfig = ref<ConfigProviderContext>();
@@ -23,7 +23,7 @@ export function useGlobalConfig(
   defaultValue = undefined,
 ) {
   const config = getCurrentInstance()
-    ? inject(configProviderContextKey, globalConfig)
+    ? inject(INJECTION_KEY_CONFIG_PROVIDER, globalConfig)
     : globalConfig;
   if (key) {
     return computed(() => config.value?.[key] ?? defaultValue);
@@ -60,7 +60,7 @@ export function provideGlobalConfig({ config, app, global = false }: ProvidePara
     return mergeConfig(oldConfig.value, _config);
   });
 
-  provideFn(configProviderContextKey, context);
+  provideFn(INJECTION_KEY_CONFIG_PROVIDER, context);
 
   if (global || !globalConfig.value) {
     globalConfig.value = context.value;

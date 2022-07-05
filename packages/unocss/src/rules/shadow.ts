@@ -5,10 +5,10 @@ import { VAR_EMPTY } from './static';
 import { colorResolver, colorableShadows, handler } from '../utils';
 
 export const boxShadowsBase = {
-  '--vin-ring-offset-shadow': '0 0 #0000',
-  '--vin-ring-shadow': '0 0 #0000',
+  '--vin-ring-offset-shadow': '0 0 rgba(0,0,0,0)',
+  '--vin-ring-shadow': '0 0 rgba(0,0,0,0)',
   '--vin-shadow-inset': VAR_EMPTY,
-  '--vin-shadow': '0 0 #0000',
+  '--vin-shadow': '0 0 rgba(0,0,0,0)',
 };
 
 export const boxShadows: Rule<Theme>[] = [
@@ -19,7 +19,7 @@ export const boxShadows: Rule<Theme>[] = [
       if (v) {
         return {
           '--vin-shadow': colorableShadows(v, '--vin-shadow-color').join(','),
-          'box-shadow': 'var(--vin-ring-offset-shadow, 0 0 #0000), var(--vin-ring-shadow, 0 0 #0000), var(--vin-shadow)',
+          'box-shadow': 'var(--vin-ring-offset-shadow), var(--vin-ring-shadow), var(--vin-shadow)',
         };
       }
     },
@@ -44,7 +44,7 @@ export const ringBase = {
   '--vin-ring-offset-color': '#fff',
   '--vin-ring-width': '0px',
   '--vin-ring-color': 'rgba(147,197,253,0.5)',
-  '--vin-shadow': '0 0 #0000',
+  '--vin-shadow': '0 0 rgba(0,0,0,0)',
 };
 
 export const rings: Rule<Theme>[] = [
@@ -58,7 +58,7 @@ export const rings: Rule<Theme>[] = [
           '--vin-ring-width': value,
           '--vin-ring-offset-shadow': 'var(--vin-ring-inset) 0 0 0 var(--vin-ring-offset-width) var(--vin-ring-offset-color)',
           '--vin-ring-shadow': 'var(--vin-ring-inset) 0 0 0 calc(var(--vin-ring-width) + var(--vin-ring-offset-width)) var(--vin-ring-color)',
-          'box-shadow': 'var(--vin-ring-offset-shadow), var(--vin-ring-shadow), var(--vin-shadow, 0 0 #0000)',
+          'box-shadow': 'var(--vin-ring-offset-shadow), var(--vin-ring-shadow), var(--vin-shadow)',
         };
       }
     },

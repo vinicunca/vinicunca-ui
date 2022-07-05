@@ -8,7 +8,7 @@ import { KEY_CODES, isSet, isString } from '@vinicunca/js-utilities';
 import { focusFirstDescendant, focusableStack, getEdges, obtainAllFocusableElements, tryFocus } from './utils';
 import { EVENT_ON_RELEASE_FOCUS, EVENT_ON_TRAP_FOCUS, FOCUS_AFTER_RELEASED, FOCUS_AFTER_TRAPPED, FOCUS_AFTER_TRAPPED_OPTS, INJECTION_KEY_FOCUS_TRAP } from './constants';
 
-import { useEscapeKeydown } from '~/composables/use-escape-keydown';
+import { useEscapeKeydown } from '~/composables';
 
 export default defineComponent({
   name: 'VFocusTrap',

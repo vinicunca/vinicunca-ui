@@ -5,8 +5,6 @@ import { describe, expect, it } from 'vitest';
 
 import { colorResolver, colorToString, colorableShadows, hex2rgba, parseCssColor } from '..';
 
-/* eslint-disable sonarjs/no-duplicate-string */
-
 describe('color utils', () => {
   it('convert hex to rgb', () => {
     expect(hex2rgba('#fff')).eql([255, 255, 255]);

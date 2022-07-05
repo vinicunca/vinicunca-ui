@@ -3,9 +3,8 @@ import type { ZIndexProperty } from 'csstype';
 
 import { createVNode, defineComponent, h, renderSlot } from 'vue';
 
-import { useSameTarget } from '~/composables';
+import { useSameTarget, useTheme } from '~/composables';
 import { PATCH_FLAGS, buildProps, definePropType } from '~/utils';
-import { useTheme } from '~/composables/use-theme';
 
 export const overlayProps = buildProps({
   mask: { type: Boolean, default: true },

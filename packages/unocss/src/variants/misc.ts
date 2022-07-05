@@ -1,6 +1,6 @@
 import type { Variant } from '@unocss/core';
 
-import { handler } from '../utils';
+import { getComponent, handler } from '../utils';
 
 export const variantSpaceAndDivide: Variant = (matcher) => {
   if (/^space-?([xy])-?(-?.+)$/.test(matcher) || /^divide-/.test(matcher)) {
@@ -71,26 +71,36 @@ export const variantScope: Variant = {
 export const variantVariables: Variant = {
   name: 'variables',
   match(matcher) {
-    const match = matcher.match(/^(\[.+?\]):/);
-    if (match) {
-      const variant = handler.bracket(match[1]) ?? '';
-      return {
-        matcher: matcher.slice(match[0].length),
-        handle(input, next) {
-          const updates = variant.startsWith('@')
-            ? {
-                parent: `${input.parent ? `${input.parent} $$ ` : ''}${variant}`,
-              }
-            : {
-                selector: variant.replace(/&/g, input.selector),
-              };
-          return next({
-            ...input,
-            ...updates,
-          });
-        },
-      };
+    if (!matcher.startsWith('[')) {
+      return;
     }
+
+    const [match, rest] = getComponent(matcher, '[', ']', ':') ?? [];
+    if (!(match && rest && rest !== '')) {
+      return;
+    }
+
+    const variant = handler.bracket(match) ?? '';
+    if (!(variant.startsWith('@') || variant.includes('&'))) {
+      return;
+    }
+
+    return {
+      matcher: rest,
+      handle(input, next) {
+        const updates = variant.startsWith('@')
+          ? {
+              parent: `${input.parent ? `${input.parent} $$ ` : ''}${variant}`,
+            }
+          : {
+              selector: variant.replace(/&/g, input.selector),
+            };
+        return next({
+          ...input,
+          ...updates,
+        });
+      },
+    };
   },
   multiPass: true,
 };

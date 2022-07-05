@@ -2,7 +2,7 @@ import type { Rule } from '@unocss/core';
 
 import { GLOBAL_KEYWORDS, POSITION_MAP, colorResolver, handler, makeGlobalStaticRules } from '../utils';
 
-export const VAR_EMPTY = 'var(--vin-empty,/*!*/ /*!*/)';
+export const VAR_EMPTY = ' ';
 
 // display table included on table.ts
 export const displays: Rule[] = [

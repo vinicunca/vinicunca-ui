@@ -3,6 +3,6 @@ import type { ConfigProviderProps } from '~/components/config-provider';
 
 export type ConfigProviderContext = Partial<ConfigProviderProps>;
 
-export const configProviderContextKey: InjectionKey<
+export const INJECTION_KEY_CONFIG_PROVIDER: InjectionKey<
   Ref<ConfigProviderContext>
-> = Symbol('ConfigProviderContext');
+> = Symbol('INJECTION_KEY_CONFIG_PROVIDER');

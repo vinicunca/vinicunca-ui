@@ -4,7 +4,7 @@ import type { Theme } from '../theme';
 import { toArray } from '@vinicunca/js-utilities';
 
 import { handler } from './handlers';
-import { colorOpacityToString, colorToString, getComponents, parseCssColor } from './colors';
+import { colorOpacityToString, colorToString, parseCssColor } from './colors';
 import { DIRECTION_MAP, GLOBAL_KEYWORDS } from './mappings';
 
 export const CONTROL_MINI_NO_NEGATIVE = '$$mini-no-negative';
@@ -219,3 +219,65 @@ export const makeGlobalStaticRules = (prefix: string, property?: string) => {
   return GLOBAL_KEYWORDS.map((keyword) => [`${prefix}-${keyword}`, { [property ?? prefix]: keyword }] as Rule);
 };
 
+export function getComponent(str: string, open: string, close: string, separator: string) {
+  if (str === '') {
+    return;
+  }
+
+  const _length = str.length;
+  let parenthesis = 0;
+  for (let i = 0; i < _length; i++) {
+    switch (str[i]) {
+      case open:
+        parenthesis++;
+        break;
+
+      case close:
+        if (--parenthesis < 0) {
+          return;
+        }
+        break;
+
+      case separator:
+        if (parenthesis === 0) {
+          if (i === 0 || i === _length - 1) {
+            return;
+          }
+          return [
+            str.slice(0, i),
+            str.slice(i + 1),
+          ];
+        }
+    }
+  }
+
+  return [
+    str,
+    '',
+  ];
+}
+
+export function getComponents(str: string, separator: string, limit?: number) {
+  if (separator.length !== 1) {
+    return;
+  }
+
+  limit = limit ?? 10;
+  const components = [];
+  let i = 0;
+  while (str !== '') {
+    if (++i > limit) {
+      return;
+    }
+    const componentPair = getComponent(str, '(', ')', separator);
+    if (!componentPair) {
+      return;
+    }
+    const [component, rest] = componentPair;
+    components.push(component);
+    str = rest;
+  }
+  if (components.length > 0) {
+    return components;
+  }
+}

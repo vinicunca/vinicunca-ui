@@ -59,4 +59,5 @@ export interface Theme {
   // vars
   /** Used to generate CSS variables placeholder in preflight */
   preflightBase?: Dictionary<string | number>;
+  varsBase?: Dictionary<string | number>;
 }

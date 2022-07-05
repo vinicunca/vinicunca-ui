@@ -12,6 +12,12 @@ export const colors: Theme['colors'] = {
   transparent: 'transparent',
   black: '#000',
   white: '#fff',
+  primary: 'var(--vin-brand-primary)',
+  secondary: 'var(--vin-brand-secondary)',
+  success: 'var(--vin-brand-success)',
+  info: 'var(--vin-brand-info)',
+  warning: 'var(--vin-brand-warning)',
+  danger: 'var(--vin-brand-danger)',
   rose: {
     50: '#fff1f2',
     100: '#ffe4e6',

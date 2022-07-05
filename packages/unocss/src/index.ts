@@ -1,6 +1,7 @@
 import type { UserConfig } from '@unocss/core';
 import type { Theme } from './theme';
 import type { WebFontsOptions } from '@vinicunca/preset-web-fonts';
+import type { PresetVinicuncaOptions } from './presets';
 
 import presetIcons from '@unocss/preset-icons';
 import transformerVariantGroup from '@unocss/transformer-variant-group';
@@ -9,7 +10,10 @@ import { presetWebFonts } from '@vinicunca/preset-web-fonts';
 
 import { presetVinicunca } from './presets';
 
-export function extendUnocssOptions({ config = {}, webFontsConfig }: { config?: UserConfig; webFontsConfig?: WebFontsOptions } = {}): UserConfig<Theme> {
+export function extendUnocssOptions(
+  { config = {}, vinicunaConfig = {}, webFontsConfig }:
+  { config?: UserConfig; vinicunaConfig?: PresetVinicuncaOptions; webFontsConfig?: WebFontsOptions } = {},
+): UserConfig<Theme> {
   const include = [
     /\.vue$/,
     /vinicunca\/es\/components/,
@@ -26,7 +30,7 @@ export function extendUnocssOptions({ config = {}, webFontsConfig }: { config?: 
   }
 
   const presets = [
-    presetVinicunca(),
+    presetVinicunca(vinicunaConfig),
     presetIcons({
       scale: 1.2,
     }),

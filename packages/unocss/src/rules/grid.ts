@@ -62,12 +62,14 @@ export const grids: Rule<Theme>[] = [
   [
     /^(?:grid-)?(row|col)-end-(.+)$/,
     ([_, c, v]) => ({ [`grid-${rowCol(c)}-end`]: handler.bracket.cssvar(v) ?? v }),
+    { autocomplete: ['grid-(row|col)-(start|end)-<num>'] },
   ],
 
   // auto flows
   [
     /^(?:grid-)?auto-(rows|cols)-(.+)$/,
     ([_, c, v], { theme }) => ({ [`grid-auto-${rowCol(c)}`]: autoDirection(c, theme, v) }),
+    { autocomplete: ['grid-auto-(rows|cols)-<num>'] },
   ],
 
   // grid-auto-flow, auto-flow: uno
@@ -79,6 +81,7 @@ export const grids: Rule<Theme>[] = [
   [
     /^(?:grid-auto-flow|auto-flow|grid-flow)-(row|col|dense|row-dense|col-dense)$/,
     ([_, v]) => ({ 'grid-auto-flow': rowCol(v).replace('-', ' ') }),
+    { autocomplete: ['(grid-auto-flow|auto-flow|grid-flow)-(row|col|dense|row-dense|col-dense)'] },
   ],
 
   // templates
@@ -95,6 +98,7 @@ export const grids: Rule<Theme>[] = [
   [
     /^grid-(rows|cols)-(\d+)$/,
     ([_, c, d]) => ({ [`grid-template-${rowCol(c)}`]: `repeat(${d},minmax(0,1fr))` }),
+    { autocomplete: ['grid-(rows|cols)-<num>', 'grid-(rows|cols)-none'] },
   ],
 
   // template none

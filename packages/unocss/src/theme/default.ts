@@ -8,6 +8,7 @@ import { breakpoints, spacing, verticalBreakpoints } from './layout';
 import { height, maxHeight, maxWidth, width } from './size';
 import { preflightBase } from './preflight';
 import { duration, easing } from './transition';
+import { varsBase } from './variable';
 
 export const theme: Theme = {
   width,
@@ -43,4 +44,5 @@ export const theme: Theme = {
   duration,
   ringWidth,
   preflightBase,
+  varsBase,
 };

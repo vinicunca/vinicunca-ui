@@ -1,0 +1,37 @@
+// Vitest Snapshot v1
+
+exports[`preset-mini > preflight 1`] = `
+"/* layer: preflights */
+:root{--vin-brand-primary:#1976d2;--vin-brand-secondary:#9c27b0;--vin-brand-success:#2e7d32;--vin-brand-info:#0288d1;--vin-brand-warning:#ed6c02;--vin-brand-danger:#d32f2f;--vin-overlay-color-lighter:rgba(0, 0, 0, 0.5);}; *,::before,::after{--vin-rotate:0;--vin-rotate-x:0;--vin-rotate-y:0;--vin-rotate-z:0;--vin-scale-x:1;--vin-scale-y:1;--vin-scale-z:1;--vin-skew-x:0;--vin-skew-y:0;--vin-translate-x:0;--vin-translate-y:0;--vin-translate-z:0;--vin-ring-offset-shadow:0 0 rgba(0,0,0,0);--vin-ring-shadow:0 0 rgba(0,0,0,0);--vin-shadow-inset: ;--vin-shadow:0 0 rgba(0,0,0,0);--vin-ring-inset: ;--vin-ring-offset-width:0px;--vin-ring-offset-color:#fff;--vin-ring-width:0px;--vin-ring-color:rgba(147,197,253,0.5);--vin-blur: ;--vin-brightness: ;--vin-contrast: ;--vin-drop-shadow: ;--vin-grayscale: ;--vin-hue-rotate: ;--vin-invert: ;--vin-saturate: ;--vin-sepia: ;--vin-backdrop-blur: ;--vin-backdrop-brightness: ;--vin-backdrop-contrast: ;--vin-backdrop-grayscale: ;--vin-backdrop-hue-rotate: ;--vin-backdrop-invert: ;--vin-backdrop-opacity: ;--vin-backdrop-saturate: ;--vin-backdrop-sepia: ;}::backdrop{--vin-rotate:0;--vin-rotate-x:0;--vin-rotate-y:0;--vin-rotate-z:0;--vin-scale-x:1;--vin-scale-y:1;--vin-scale-z:1;--vin-skew-x:0;--vin-skew-y:0;--vin-translate-x:0;--vin-translate-y:0;--vin-translate-z:0;--vin-ring-offset-shadow:0 0 rgba(0,0,0,0);--vin-ring-shadow:0 0 rgba(0,0,0,0);--vin-shadow-inset: ;--vin-shadow:0 0 rgba(0,0,0,0);--vin-ring-inset: ;--vin-ring-offset-width:0px;--vin-ring-offset-color:#fff;--vin-ring-width:0px;--vin-ring-color:rgba(147,197,253,0.5);--vin-blur: ;--vin-brightness: ;--vin-contrast: ;--vin-drop-shadow: ;--vin-grayscale: ;--vin-hue-rotate: ;--vin-invert: ;--vin-saturate: ;--vin-sepia: ;--vin-backdrop-blur: ;--vin-backdrop-brightness: ;--vin-backdrop-contrast: ;--vin-backdrop-grayscale: ;--vin-backdrop-hue-rotate: ;--vin-backdrop-invert: ;--vin-backdrop-opacity: ;--vin-backdrop-saturate: ;--vin-backdrop-sepia: ;}
+/* layer: default */
+.border-danger{border-color:var(--vin-brand-danger);}
+.border-info{border-color:var(--vin-brand-info);}
+.border-primary{border-color:var(--vin-brand-primary);}
+.border-secondary{border-color:var(--vin-brand-secondary);}
+.border-success{border-color:var(--vin-brand-success);}
+.border-warning{border-color:var(--vin-brand-warning);}
+.bg-danger,
+.hover\\\\:bg-danger:hover{background-color:var(--vin-brand-danger);}
+.bg-info,
+.hover\\\\:bg-info:hover{background-color:var(--vin-brand-info);}
+.bg-primary,
+.hover\\\\:bg-primary:hover{background-color:var(--vin-brand-primary);}
+.bg-secondary,
+.hover\\\\:bg-secondary:hover{background-color:var(--vin-brand-secondary);}
+.bg-success,
+.hover\\\\:bg-success:hover{background-color:var(--vin-brand-success);}
+.bg-warning,
+.hover\\\\:bg-warning:hover{background-color:var(--vin-brand-warning);}
+.text-danger{color:var(--vin-brand-danger);}
+.text-info{color:var(--vin-brand-info);}
+.text-primary{color:var(--vin-brand-primary);}
+.text-secondary{color:var(--vin-brand-secondary);}
+.text-success{color:var(--vin-brand-success);}
+.text-warning{color:var(--vin-brand-warning);}
+.shadow-danger{--vin-shadow-color:var(--vin-brand-danger);}
+.shadow-info{--vin-shadow-color:var(--vin-brand-info);}
+.shadow-primary{--vin-shadow-color:var(--vin-brand-primary);}
+.shadow-secondary{--vin-shadow-color:var(--vin-brand-secondary);}
+.shadow-success{--vin-shadow-color:var(--vin-brand-success);}
+.shadow-warning{--vin-shadow-color:var(--vin-brand-warning);}"
+`;

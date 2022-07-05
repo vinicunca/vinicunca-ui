@@ -9,7 +9,7 @@ module.exports = defineConfig({
 
   overrides: [
     {
-      files: ['unocss/**/*.*'],
+      files: ['packages/unocss/**/*.*'],
       rules: {
         'sonarjs/no-nested-template-literals': 'off',
         'sonarjs/no-duplicate-string': 'off',
