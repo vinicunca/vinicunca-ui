@@ -5,11 +5,12 @@ import { createVNode, defineComponent, h, renderSlot } from 'vue';
 
 import { useSameTarget } from '~/composables';
 import { PATCH_FLAGS, buildProps, definePropType } from '~/utils';
+import { useTheme } from '~/composables/use-theme';
 
 export const overlayProps = buildProps({
   mask: { type: Boolean, default: true },
   customMaskEvent: { type: Boolean, default: false },
-  overlayClass: {
+  classOverlay: {
     type: definePropType<string | string[] | Dictionary<boolean>>([
       String,
       Array,
@@ -29,6 +30,8 @@ export default defineComponent({
   props: overlayProps,
 
   setup(props, { slots, emit }) {
+    const { getThemeClasses } = useTheme('overlayMask');
+
     function onMaskClick(event: MouseEvent) {
       emit('click', event);
     }
@@ -47,8 +50,8 @@ export default defineComponent({
           'div',
           {
             class: [
-              props.overlayClass,
-              'fixed',
+              props.classOverlay,
+              getThemeClasses(),
             ],
             style: {
               zIndex: props.zIndex,
@@ -65,7 +68,7 @@ export default defineComponent({
         return h(
           'div',
           {
-            class: props.overlayClass,
+            class: props.classOverlay,
             style: {
               zIndex: props.zIndex,
               position: 'fixed',

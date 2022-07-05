@@ -43,7 +43,8 @@
     "@vinicunca/nuxt": "workspace:*",
     "@vinicunca/preset-web-fonts": "workspace:*",
     "@vinicunca/unocss": "workspace:*",
-    "@vinicunca/unplugin-vue-components": "workspace:*"
+    "@vinicunca/unplugin-vue-components": "workspace:*",
+    "@vinicunca/vueuse": "workspace:*"
   },
   "devDependencies": {
     "@commitlint/cli": "^17.0.2",
