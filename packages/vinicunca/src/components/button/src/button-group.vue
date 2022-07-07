@@ -3,7 +3,7 @@ import { provide, reactive, toRef } from 'vue';
 
 import { buttonGroupProps } from './button-group';
 
-import { INJECTION_KEY_BUTTON_GROUP_CONTEXT } from '~/tokens';
+import { INJECTION_KEY_BUTTON_GROUP } from '~/tokens';
 
 const props = defineProps(buttonGroupProps);
 
@@ -12,7 +12,7 @@ defineOptions({
 });
 
 provide(
-  INJECTION_KEY_BUTTON_GROUP_CONTEXT,
+  INJECTION_KEY_BUTTON_GROUP,
   reactive({
     type: toRef(props, 'type'),
   }),

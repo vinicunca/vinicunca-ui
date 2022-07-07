@@ -5,6 +5,6 @@ export interface ButtonGroupContext {
   type?: ButtonProps['type'];
 }
 
-export const INJECTION_KEY_BUTTON_GROUP_CONTEXT: InjectionKey<ButtonGroupContext> = Symbol(
-  'INJECTION_KEY_BUTTON_GROUP_CONTEXT',
+export const INJECTION_KEY_BUTTON_GROUP: InjectionKey<ButtonGroupContext> = Symbol(
+  'INJECTION_KEY_BUTTON_GROUP',
 );

@@ -1,6 +1,6 @@
-import Overlay from './src/overlay';
+import VOverlay from './src/overlay';
 
-export const VOverlay = Overlay;
+export { VOverlay };
 export default VOverlay;
 
 export * from './src/overlay';

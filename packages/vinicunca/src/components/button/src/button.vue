@@ -4,7 +4,7 @@ import { computed, inject, ref } from 'vue';
 import { buttonEmits, buttonProps } from './button';
 
 import { VIcon } from '~/components/icon';
-import { INJECTION_KEY_BUTTON_GROUP_CONTEXT } from '~/tokens';
+import { INJECTION_KEY_BUTTON_GROUP } from '~/tokens';
 import { useDisabled, useTheme } from '~/composables';
 
 const props = defineProps(buttonProps);
@@ -14,7 +14,7 @@ defineOptions({
   name: 'VButton',
 });
 
-const buttonGroupContext = inject(INJECTION_KEY_BUTTON_GROUP_CONTEXT, undefined);
+const buttonGroupContext = inject(INJECTION_KEY_BUTTON_GROUP, undefined);
 
 const { getThemeClasses } = useTheme('button');
 const _disabled = useDisabled();
