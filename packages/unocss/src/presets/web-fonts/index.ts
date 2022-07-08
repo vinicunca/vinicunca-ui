@@ -1,4 +1,4 @@
-import type { Preset } from '@unocss/core';
+import type { Preset } from 'unocss';
 import type { WebFontMeta, WebFontsOptions, WebFontsProviders } from './types';
 
 import { toArray } from '@vinicunca/js-utilities';
@@ -48,7 +48,7 @@ const providers = {
   local: LocalProvider,
 };
 
-export function presetWebFonts(options: WebFontsOptions = {}): Preset<any> {
+export function presetWebFonts(options: WebFontsOptions = {}): Preset {
   const {
     provider: defaultProvider = 'local',
     extendTheme = true,
@@ -85,7 +85,7 @@ export function presetWebFonts(options: WebFontsOptions = {}): Preset<any> {
     }
   }
 
-  const preset: Preset<any> = {
+  const preset: Preset = {
     name: '@vinicunca/preset-web-fonts',
     layers: { [layerName]: -40 },
     preflights: [

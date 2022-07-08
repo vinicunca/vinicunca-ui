@@ -1,7 +1,7 @@
-import type { VariantObject } from '@unocss/core';
+import type { VariantObject } from 'unocss';
 import type { PresetVinicuncaOptions } from '../presets';
 
-import { escapeRegExp } from '@unocss/core';
+import { escapeRegExp } from 'unocss';
 
 const PseudoClasses: Dictionary<string> = Object.fromEntries([
   // pseudo elements part 1

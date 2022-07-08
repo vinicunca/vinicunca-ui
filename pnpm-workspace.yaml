@@ -1,9 +1,4 @@
 packages:
-  - packages/*
   - docs
-  - play
+  - packages/*
   - internal/*
-  - unocss
-  - unplugin-vue-components
-  - nuxt
-  - preset-web-fonts

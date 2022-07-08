@@ -1,8 +1,7 @@
-import type { CSSValues, Rule, RuleContext } from '@unocss/core';
+import type { CSSValues, Rule, RuleContext } from 'unocss';
 import type { Theme } from '../theme';
 
-import { colorResolver, colorableShadows, globalKeywords, handler } from '@unocss/preset-mini/utils';
-
+import { GLOBAL_KEYWORDS, colorResolver, colorableShadows, handler } from '../utils';
 import { VAR_EMPTY } from './static';
 
 export const filterBase = {
@@ -108,8 +107,8 @@ export const filters: Rule<Theme>[] = [
     'backdrop-filter': 'none',
   }],
 
-  ...globalKeywords.map((keyword) => [`filter-${keyword}`, { filter: keyword }] as Rule),
-  ...globalKeywords.map((keyword) => [`backdrop-filter-${keyword}`, {
+  ...GLOBAL_KEYWORDS.map((keyword) => [`filter-${keyword}`, { filter: keyword }] as Rule),
+  ...GLOBAL_KEYWORDS.map((keyword) => [`backdrop-filter-${keyword}`, {
     '-webkit-backdrop-filter': keyword,
     'backdrop-filter': keyword,
   }] as Rule),

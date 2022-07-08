@@ -1,4 +1,4 @@
-import type { CSSColorValue, Rule, RuleContext } from '@unocss/core';
+import type { CSSColorValue, Rule, RuleContext } from 'unocss';
 import type { Theme } from '../theme';
 
 import { GLOBAL_KEYWORDS, POSITION_MAP, colorOpacityToString, colorToString, handler, makeGlobalStaticRules, parseColor } from '../utils';

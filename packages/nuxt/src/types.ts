@@ -1,4 +1,4 @@
-import type { UserConfig } from '@unocss/core';
+import type { UserConfig } from 'unocss';
 import type { WebFontsOptions } from '@vinicunca/preset-web-fonts';
 
 interface UnoCssOptions extends UserConfig {

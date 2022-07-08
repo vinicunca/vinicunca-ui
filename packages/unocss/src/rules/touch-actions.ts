@@ -1,4 +1,4 @@
-import type { Rule } from '@unocss/core';
+import type { Rule } from 'unocss';
 
 import { VAR_EMPTY } from '../rules';
 import { makeGlobalStaticRules } from '../utils';

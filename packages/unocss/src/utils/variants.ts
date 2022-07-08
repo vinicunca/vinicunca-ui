@@ -1,6 +1,6 @@
-import type { VariantHandler, VariantHandlerContext, VariantObject } from '@unocss/core';
+import type { VariantHandler, VariantHandlerContext, VariantObject } from 'unocss';
 
-import { escapeRegExp } from '@unocss/core';
+import { escapeRegExp } from 'unocss';
 
 export function variantMatcher(name: string, handler: (input: VariantHandlerContext) => Dictionary<any>): VariantObject {
   const re = new RegExp(`^${escapeRegExp(name)}[:-]`);

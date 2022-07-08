@@ -25,7 +25,6 @@
     "lint": "eslint . --ext .vue,.js,.ts,.jsx,.tsx,.md,.json --max-warnings 0",
     "lint:commit": "commitlint --from $(git merge-base origin/dev HEAD) --to HEAD > ./commit-lint.txt",
     "lint:fix": "eslint --fix . --ext .vue,.js,.ts,.jsx,.tsx,.md,.json",
-    "postinstall": "pnpm stub",
     "prepare": "husky install",
     "release": "bumpp packages/vinicunca/package.json --commit 'chore: release v' --tag",
     "stub": "pnpm run -r --parallel stub",
@@ -41,7 +40,6 @@
   "dependencies": {
     "@vinicunca/js-utilities": "^1.2.0",
     "@vinicunca/nuxt": "workspace:*",
-    "@vinicunca/preset-web-fonts": "workspace:*",
     "@vinicunca/unocss": "workspace:*",
     "@vinicunca/unplugin-vue-components": "workspace:*",
     "@vinicunca/vueuse": "workspace:*"

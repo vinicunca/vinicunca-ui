@@ -1,4 +1,4 @@
-import type { Rule } from '@unocss/core';
+import type { Rule } from 'unocss';
 
 import { textAligns, verticalAligns } from './align';
 import { animations } from './animation';

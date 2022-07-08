@@ -1,4 +1,4 @@
-import type { Variant } from '@unocss/core';
+import type { Variant } from 'unocss';
 
 export const variantImportant: Variant = {
   name: 'important',

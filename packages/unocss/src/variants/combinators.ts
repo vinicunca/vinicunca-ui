@@ -1,4 +1,4 @@
-import type { Variant, VariantObject } from '@unocss/core';
+import type { Variant, VariantObject } from 'unocss';
 
 function scopeMatcher(strict: boolean, name: string, template: string): VariantObject {
   const re = strict

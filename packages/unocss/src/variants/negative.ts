@@ -1,4 +1,4 @@
-import type { Variant } from '@unocss/core';
+import type { Variant } from 'unocss';
 
 import { CONTROL_MINI_NO_NEGATIVE } from '../utils';
 

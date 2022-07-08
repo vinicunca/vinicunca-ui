@@ -1,6 +1,6 @@
-import type { CSSColorValue, RGBAColorValue } from '@unocss/core';
+import type { CSSColorValue, RGBAColorValue } from 'unocss';
 
-import { escapeRegExp } from '@unocss/core';
+import { escapeRegExp } from 'unocss';
 
 import { getComponents } from './utilities';
 

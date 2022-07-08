@@ -1,4 +1,4 @@
-import type { CSSEntries, ParsedColorValue, Rule, RuleContext, VariantContext } from '@unocss/core';
+import type { CSSEntries, ParsedColorValue, Rule, RuleContext, VariantContext } from 'unocss';
 import type { Theme } from '../theme';
 
 import { toArray } from '@vinicunca/js-utilities';

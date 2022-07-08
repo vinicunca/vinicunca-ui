@@ -60,7 +60,6 @@
   "devDependencies": {
     "@iconify-json/carbon": "^1.1.6",
     "@types/node": "*",
-    "@unocss/preset-icons": "^0.43.1",
     "csstype": "^2.6.20",
     "cypress": "^10.3.0",
     "unplugin-vue-define-options": "^0.6.1",
