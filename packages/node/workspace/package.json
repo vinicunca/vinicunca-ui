@@ -1,0 +1,37 @@
+{
+  "name": "@vinicunca/workspace",
+  "type": "module",
+  "version": "0.0.1",
+  "description": "workspace manager for Vinicunca.",
+  "license": "MIT",
+  "homepage": "https://vinicunca.dev/",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vinicunca/vinicunca-ui.git",
+    "directory": "packages/node/workspace"
+  },
+  "bugs": {
+    "url": "https://github.com/vinicunca/vinicunca-ui/issues"
+  },
+  "exports": {
+    ".": {
+      "dev": "./src/index.ts",
+      "import": "./dist/index.js"
+    },
+    "./*": "./*"
+  },
+  "module": "./dist/index.js",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "vinicunca-cli build",
+    "clean": "rimraf ./dist"
+  },
+  "dependencies": {
+    "@pnpm/find-workspace-dir": "^4.0.0",
+    "@pnpm/find-workspace-packages": "^4.0.0",
+    "@pnpm/logger": "^4.0.0",
+    "@vinicunca/node-constants": "workspace:*"
+  }
+}
