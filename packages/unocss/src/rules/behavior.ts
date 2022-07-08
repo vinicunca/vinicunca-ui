@@ -1,4 +1,4 @@
-import type { Rule } from '@unocss/core';
+import type { Rule } from 'unocss';
 import type { Theme } from '../theme';
 
 import { GLOBAL_KEYWORDS, colorResolver, handler } from '../utils';

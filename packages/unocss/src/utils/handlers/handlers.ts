@@ -1,4 +1,4 @@
-import { escapeSelector } from '@unocss/core';
+import { escapeSelector } from 'unocss';
 
 import { GLOBAL_KEYWORDS } from '../mappings';
 

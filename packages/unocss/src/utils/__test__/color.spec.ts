@@ -1,6 +1,6 @@
-import type { RuleContext } from '@unocss/core';
+import type { RuleContext } from 'unocss';
 
-import { createGenerator } from '@unocss/core';
+import { createGenerator } from 'unocss';
 import { describe, expect, it } from 'vitest';
 
 import { colorResolver, colorToString, colorableShadows, hex2rgba, parseCssColor } from '..';

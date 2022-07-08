@@ -1,4 +1,4 @@
-import type { CSSEntries, CSSObject, Rule, RuleContext } from '@unocss/core';
+import type { CSSEntries, CSSObject, Rule, RuleContext } from 'unocss';
 import type { Theme } from '../theme';
 
 import { CORNER_MAP, DIRECTION_MAP, GLOBAL_KEYWORDS, colorOpacityToString, colorToString, handler, hasParseableColor, parseColor } from '../utils';
@@ -84,7 +84,7 @@ function handlerBorderSize([_, a = '', b]: string[], { theme }: RuleContext<Them
   }
 }
 
-function handlerBorderStyle([_, a = '', s]: string[]): CSSEntries | undefined {
+export function handlerBorderStyle([_, a = '', s]: string[]): CSSEntries | undefined {
   if (borderStyles.includes(s) && a in DIRECTION_MAP) {
     return DIRECTION_MAP[a].map((dir) => [`border${dir}-style`, s]);
   }

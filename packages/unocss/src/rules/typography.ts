@@ -1,4 +1,4 @@
-import type { CSSObject, Rule } from '@unocss/core';
+import type { CSSObject, Rule } from 'unocss';
 import type { Theme } from '../theme';
 
 import { toArray } from '@vinicunca/js-utilities';

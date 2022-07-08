@@ -1,4 +1,4 @@
-import type { CSSEntries, Rule, RuleContext } from '@unocss/core';
+import type { CSSEntries, Rule, RuleContext } from 'unocss';
 import type { Theme } from '../theme';
 
 import { DIRECTION_MAP, directionSize, handler } from '../utils';

@@ -1,7 +1,7 @@
-import type { CSSEntries, Rule, RuleContext } from '@unocss/core';
+import type { CSSEntries, Rule, RuleContext } from 'unocss';
 import type { Theme } from '../theme';
 
-import { borderStyles } from '../rules';
+import { borderStyles, handlerBorderStyle } from '../rules';
 import { DIRECTION_MAP, colorResolver, handler } from '../utils';
 
 export const divides: Rule[] = [
@@ -41,7 +41,9 @@ function handlerDivide([_, d, s]: string[], { theme }: RuleContext<Theme>): CSSE
       return [key, value];
     });
 
-    if (results) {
+    const borderStyle = handlerBorderStyle(['', d, 'solid']);
+
+    if (results && borderStyle) {
       return [
         [`--vin-divide-${d}-reverse`, 0],
         ...results,

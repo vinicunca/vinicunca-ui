@@ -1,4 +1,4 @@
-import type { Rule, RuleContext } from '@unocss/core';
+import type { Rule, RuleContext } from 'unocss';
 import type { Theme } from '../theme';
 
 import { handler } from '../utils';

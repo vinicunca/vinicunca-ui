@@ -1,4 +1,4 @@
-import type { Variant } from '@unocss/core';
+import type { Variant } from 'unocss';
 
 import { getComponent, handler } from '../utils';
 

@@ -1,4 +1,4 @@
-import type { Rule, Shortcut, VariantHandlerContext } from '@unocss/core';
+import type { Rule, Shortcut, VariantHandlerContext } from 'unocss';
 import type { Theme } from '../theme';
 
 import { resolveBreakpoints } from '../utils';

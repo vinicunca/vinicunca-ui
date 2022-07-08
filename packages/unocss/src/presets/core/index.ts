@@ -1,10 +1,10 @@
-import type { Postprocessor, Preset, PresetOptions } from '@unocss/core';
-import type { Theme, ThemeAnimation } from './theme';
+import type { Postprocessor, Preset, PresetOptions } from 'unocss';
+import type { Theme, ThemeAnimation } from '../../theme';
 
-import { preflights } from './preflights';
-import { rules } from './rules';
-import { theme } from './theme';
-import { variants } from './variants';
+import { preflights } from '../../preflights';
+import { rules } from '../../rules';
+import { theme } from '../../theme';
+import { variants } from '../../variants';
 
 export type { ThemeAnimation, Theme };
 

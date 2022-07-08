@@ -1,24 +1,56 @@
 {
   "name": "@vinicunca/unocss",
-  "version": "0.0.1",
-  "private": true,
+  "version": "0.0.5",
+  "description": "UnoCSS presets & config for vinicunca",
+  "author": "praburangki <praburangki@gmail.com>",
   "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
+  "homepage": "https://vinicunca.dev/unocss",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vinicunca/vinicunca-ui.git",
+    "directory": "packages/unocss"
+  },
+  "bugs": {
+    "url": "https://github.com/vinicunca/vinicunca-ui/issues"
+  },
+  "keywords": [
+    "unocss",
+    "unocss-preset",
+    "vinicunca"
+  ],
+  "sideEffects": false,
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "require": "./dist/index.cjs",
+      "import": "./dist/index.mjs"
+    },
+    "./styles/*": "./styles/*"
+  },
   "main": "./dist/index.cjs",
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",
+  "files": [
+    "dist",
+    "styles"
+  ],
   "scripts": {
     "build": "unbuild",
     "dev": "pnpm run stub",
-    "stub": "UNBUILD_ENV=dev unbuild --stub",
+    "stub": "unbuild --stub",
+    "prepublish": "pnpm run build",
     "test": "vitest"
   },
-  "dependencies": {
-    "@unocss/core": "^0.43.1"
+  "peerDependencies": {
+    "@vinicunca/js-utilities": "^1.2.0",
+    "ohmyfetch": "^0.4.18",
+    "unocss": "^0.43.2"
   },
   "devDependencies": {
-    "@unocss/preset-icons": "^0.43.1",
-    "@unocss/transformer-directives": "^0.43.1",
-    "@unocss/transformer-variant-group": "^0.43.1",
-    "unbuild": "^0.7.4"
+    "unbuild": "^0.7.4",
+    "unocss": "^0.43.2"
   }
 }

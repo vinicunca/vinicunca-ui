@@ -1,4 +1,4 @@
-import type { Rule } from '@unocss/core';
+import type { Rule } from 'unocss';
 
 import { GLOBAL_KEYWORDS } from '../utils/mappings';
 

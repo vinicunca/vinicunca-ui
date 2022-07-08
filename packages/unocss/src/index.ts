@@ -1,14 +1,10 @@
-import type { UserConfig } from '@unocss/core';
+import type { Preset, UserConfig } from 'unocss';
 import type { Theme } from './theme';
-import type { WebFontsOptions } from '@vinicunca/preset-web-fonts';
-import type { PresetVinicuncaOptions } from './presets';
+import type { PresetVinicuncaOptions, WebFontsOptions } from './presets';
 
-import presetIcons from '@unocss/preset-icons';
-import transformerVariantGroup from '@unocss/transformer-variant-group';
-import transformerDirectives from '@unocss/transformer-directives';
-import { presetWebFonts } from '@vinicunca/preset-web-fonts';
+import { presetIcons, transformerDirectives, transformerVariantGroup } from 'unocss';
 
-import { presetVinicunca } from './presets';
+import { presetVinicunca, presetWebFonts } from './presets';
 
 export function extendUnocssOptions(
   { config = {}, vinicunaConfig = {}, webFontsConfig }:
@@ -29,7 +25,7 @@ export function extendUnocssOptions(
     }
   }
 
-  const presets = [
+  const presets: Preset[] = [
     presetVinicunca(vinicunaConfig),
     presetIcons({
       scale: 1.2,

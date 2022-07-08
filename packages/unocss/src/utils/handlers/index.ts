@@ -1,4 +1,6 @@
-import { createValueHandler } from '@unocss/core';
+/// <reference types="@unocss/core" />
+
+import { createValueHandler } from 'unocss';
 
 import * as valueHandlers from './handlers';
 

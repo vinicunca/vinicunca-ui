@@ -1,4 +1,4 @@
-import type { Variant, VariantContext, VariantObject } from '@unocss/core';
+import type { Variant, VariantContext, VariantObject } from 'unocss';
 import type { Theme } from '../theme';
 
 import { variantParentMatcher } from '../utils';

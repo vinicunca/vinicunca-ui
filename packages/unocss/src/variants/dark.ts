@@ -1,4 +1,4 @@
-import type { Variant } from '@unocss/core';
+import type { Variant } from 'unocss';
 import type { PresetVinicuncaOptions } from '../presets';
 
 import { variantMatcher, variantParentMatcher } from '../utils';

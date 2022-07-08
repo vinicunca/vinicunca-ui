@@ -1,4 +1,4 @@
-import type { VariantFunction } from '@unocss/core';
+import type { VariantFunction } from 'unocss';
 
 import { handler, hasParseableColor } from '../utils';
 

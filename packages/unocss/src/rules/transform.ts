@@ -1,4 +1,4 @@
-import type { CSSValues, Rule, RuleContext } from '@unocss/core';
+import type { CSSValues, Rule, RuleContext } from 'unocss';
 import type { Theme } from '../theme';
 
 import { POSITION_MAP, XYZ_MAP, handler, makeGlobalStaticRules } from '../utils';

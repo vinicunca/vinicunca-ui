@@ -1,7 +1,7 @@
-import { createGenerator } from '@unocss/core';
+import { createGenerator } from 'unocss';
 import { describe, expect, test } from 'vitest';
 
-import { presetVinicunca } from '../src/presets';
+import { presetVinicunca } from '../src/presets/core';
 
 const uno = createGenerator({
   presets: [
@@ -18,7 +18,7 @@ const uno = createGenerator({
   ],
 });
 
-describe('preset-mini', () => {
+describe('preset-core', () => {
   test('preflight', async () => {
     const { css } = await uno.generate('');
     expect(css).toMatchSnapshot();

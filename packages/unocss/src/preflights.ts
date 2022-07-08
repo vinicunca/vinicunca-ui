@@ -1,8 +1,8 @@
-import type { Preflight, PreflightContext } from '@unocss/core';
+import type { Preflight, PreflightContext } from 'unocss';
 import type { Theme } from './theme';
 import type { PresetVinicuncaOptions } from './presets';
 
-import { entriesToCss } from '@unocss/core';
+import { entriesToCss } from 'unocss';
 
 export function preflights(options: PresetVinicuncaOptions = {}): Preflight[] {
   return [
@@ -29,7 +29,7 @@ export function preflights(options: PresetVinicuncaOptions = {}): Preflight[] {
           const globalCss = entriesToCss(Object.entries(ctx.theme.preflightBase));
           const global = `*,::before,::after{${globalCss}}::backdrop{${globalCss}}`;
 
-          return `${root}; ${global}`;
+          return `${root} ${global}`;
         }
       },
     },
