@@ -1,0 +1,58 @@
+{
+  "name": "@vinicunca/build",
+  "type": "module",
+  "version": "0.0.1",
+  "description": "Build Toolchain for Vinicunca.",
+  "license": "MIT",
+  "homepage": "https://vinicunca.dev/",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vinicunca/vinicunca-ui.git",
+    "directory": "packages/node/build"
+  },
+  "bugs": {
+    "url": "https://github.com/vinicunca/vinicunca-ui/issues"
+  },
+  "keywords": [
+    "vinicunca",
+    "component library",
+    "ui framework",
+    "ui",
+    "vue",
+    "build",
+    "core"
+  ],
+  "exports": {
+    ".": {
+      "dev": "./src/index.ts",
+      "import": "./dist/index.js"
+    },
+    "./config": {
+      "dev": "./src/config.ts",
+      "import": "./dist/config.js"
+    },
+    "./*": "./*"
+  },
+  "module": "./dist/index.js",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "vinicunca-cli build",
+    "clean": "rimraf ./dist"
+  },
+  "dependencies": {
+    "@vinicunca/node-constants": "workspace:*",
+    "@vinicunca/node-utils": "workspace:*",
+    "@vinicunca/workspace": "workspace:*",
+    "esbuild": "^0.14.48",
+    "local-pkg": "^0.4.1",
+    "tsup": "^6.1.3",
+    "unconfig": "^0.3.5",
+    "unplugin-vue": "^2.2.1"
+  },
+  "devDependencies": {
+    "tsx": "^3.7.1",
+    "vue": "^3.2.37"
+  }
+}
