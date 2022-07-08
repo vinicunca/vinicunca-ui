@@ -1,0 +1,27 @@
+{
+  "compilerOptions": {
+    "target": "ESNext",
+    "module": "ESNext",
+    "lib": ["ESNext"],
+    "allowJs": false,
+    "moduleResolution": "Node",
+    "resolveJsonModule": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "sourceMap": false,
+    "types": [],
+
+    "strict": true,
+    "noUnusedLocals": true,
+    "skipLibCheck": true,
+
+    "outDir": "dist",
+    "baseUrl": "../../..",
+
+    "paths": {
+      "vinicunca": ["packages/web/vinicunca/src/index"],
+      "@vinicunca/build/config": ["packages/node/build/src/config.ts"],
+      "@vinicunca/*": ["packages/web/*/src", "packages/node/*/src"]
+    }
+  }
+}

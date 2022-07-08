@@ -1,0 +1,13 @@
+{
+  "extends": "@vinicunca/tsconfig/tsconfig.vite-config.json",
+  "include": [
+    "**/vite.config.*",
+    "**/vitest.config.*",
+    "**/vite.init.*",
+    "packages/node/*/src/**/*",
+    "packages/node/*/package.json"
+  ],
+  "compilerOptions": {
+    "composite": true
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "extends": "@vinicunca/tsconfig/tsconfig.vitest.json",
+  "include": [
+    "packages/web/*/src/**/*",
+    "packages/web/*/package.json",
+    "packages/**/__tests__/**/*",
+    "packages/**/tests/**/*"
+  ],
+  "compilerOptions": {
+    "composite": true
+  }
+}

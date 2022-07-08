@@ -1,0 +1,22 @@
+{
+  "name": "@vinicunca/tsconfig",
+  "type": "module",
+  "version": "0.0.1",
+  "description": "tsconfig for Vinicunca.",
+  "license": "MIT",
+  "homepage": "https://vinicunca.dev/",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vinicunca/vinicunca-ui.git",
+    "directory": "packages/node/tsconfig"
+  },
+  "bugs": {
+    "url": "https://github.com/vinicunca/vinicunca-ui/issues"
+  },
+  "keywords": [
+    "vinicunca",
+    "component library",
+    "ui framework",
+    "tsconfig"
+  ]
+}

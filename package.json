@@ -21,6 +21,7 @@
     "@commitlint/cli": "^17.0.2",
     "@commitlint/config-conventional": "^17.0.2",
     "@vinicunca/eslint-config": "^1.3.0",
+    "@vinicunca/tsconfig": "workspace:*",
     "bumpp": "^8.2.1",
     "c8": "^7.11.3",
     "commitizen": "^4.2.4",
