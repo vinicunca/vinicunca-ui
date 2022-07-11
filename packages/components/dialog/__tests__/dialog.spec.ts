@@ -1,5 +1,7 @@
+import { describe, it } from 'vitest';
+
 describe('VDialog.vue', () => {
-  test('render test', async () => {
+  it('render test', async () => {
     // TODO: Implement
   });
 });

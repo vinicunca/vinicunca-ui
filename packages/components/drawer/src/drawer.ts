@@ -1,8 +1,11 @@
 import type { ExtractPropTypes } from 'vue';
 
 import { buildProps } from '@vinicunca/utils';
+import { dialogProps } from '@vinicunca/components/dialog';
 
 export const drawerProps = buildProps({
+  ...dialogProps,
+
   direction: {
     type: String,
     default: 'RTL',

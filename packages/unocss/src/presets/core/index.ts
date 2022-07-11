@@ -54,6 +54,9 @@ export function presetVinicunca(options: PresetVinicuncaOptions = {}): Preset<Th
       ...brands.map((c) => `border-${c}`),
       ...brands.map((c) => `text-${c}`),
       ...brands.map((c) => `shadow-${c}`),
+
+      // Used by useLockScreen
+      'overflow-hidden',
     ],
   };
 }

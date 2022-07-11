@@ -1,12 +1,10 @@
 <script lang="ts" setup>
-import { computed, ref } from 'vue';
-import { convertToUnit } from '@vinicunca/js-utilities';
-import VOverlay from '@vinicunca/components/overlay';
-import VFocusTrap from '@vinicunca/components/focus-trap';
-import VIcon from '@vinicunca/components/icon';
-
 // TODO: Implement a11y https://www.w3.org/WAI/ARIA/apg/example-index/dialog-modal/dialog.html
 
+import { computed, ref } from 'vue';
+import { convertToUnit } from '@vinicunca/js-utilities';
+import { VOverlay } from '@vinicunca/components/overlay';
+import { VFocusTrap } from '@vinicunca/components/focus-trap';
 import { useDialog } from '@vinicunca/components/dialog';
 
 import { drawerProps } from './drawer';
@@ -25,7 +23,18 @@ const isHorizontal = computed(
 );
 const drawerSize = computed(() => convertToUnit(props.size));
 
-const {} = useDialog();
+const {
+  afterEnter,
+  afterLeave,
+  beforeLeave,
+  onClickModal,
+  onCloseRequested,
+  titleId,
+  bodyId,
+  isRendered,
+  isVisible,
+  zIndex,
+} = useDialog({ props, refTarget: refDrawer });
 </script>
 
 <template>
@@ -36,7 +45,7 @@ const {} = useDialog();
       @before-leave="beforeLeave"
     >
       <VOverlay
-        v-show="visible"
+        v-show="isVisible"
         :mask="modal"
         :overlay-class="classModal"
         :z-index="zIndex"
@@ -44,7 +53,7 @@ const {} = useDialog();
       >
         <VFocusTrap
           loop
-          :trapped="visible"
+          :trapped="isVisible"
           :el-focus-trap="refDrawer"
           :el-focus-start="refFocusStart"
           @release-requested="onCloseRequested"

@@ -1,4 +1,4 @@
-import { DEFAULT_Z_INDEX } from '@vinicunca/constants';
+import { DEFAULT_Z_INDEX } from '@vinicunca/tokens';
 import { computed, ref } from 'vue';
 
 import { useGlobalConfig } from './use-global-config';
