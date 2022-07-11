@@ -1,0 +1,6 @@
+{
+  "name": "@vinicunca/tokens",
+  "private": true,
+  "license": "MIT",
+  "main": "index.ts"
+}

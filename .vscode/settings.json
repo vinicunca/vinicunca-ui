@@ -34,5 +34,6 @@
   },
   "files.exclude": {
     "**/node_modules": true
-  }
+  },
+  "todo-tree.tree.scanMode": "workspace only"
 }

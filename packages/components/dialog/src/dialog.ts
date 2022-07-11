@@ -1,0 +1,35 @@
+import type { ExtractPropTypes } from 'vue';
+
+import { isBoolean } from '@vinicunca/js-utilities';
+import { buildProps } from '@vinicunca/utils';
+import { EVENT_UPDATE_MODEL } from '@vinicunca/constants';
+
+import { dialogContentProps } from './dialog-content';
+
+export const dialogProps = buildProps({
+  ...dialogContentProps,
+
+  closeDelay: { type: Number, default: 0 },
+
+  destroyOnClose: { type: Boolean, default: false },
+
+  openDelay: { type: Number, default: 0 },
+
+  width: { type: [String, Number] },
+
+  zIndex: { type: Number },
+} as const);
+
+export type DialogProps = ExtractPropTypes<typeof dialogProps>;
+
+export const dialogEmits = {
+  open: () => true,
+  opened: () => true,
+  close: () => true,
+  closed: () => true,
+  [EVENT_UPDATE_MODEL]: (value: boolean) => isBoolean(value),
+  openAutoFocus: () => true,
+  closeAutoFocus: () => true,
+};
+
+export type DialogEmits = typeof dialogEmits;

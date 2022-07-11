@@ -32,24 +32,15 @@
     "./es/*": "./es/*.mjs",
     "./lib/*.js": "./lib/*.js",
     "./lib/*": "./lib/*.js",
-    "./unplugin-vue-components": "./unplugin-vue-components/index.cjs",
-    "./unocss": "./unocss/index.cjs",
     "./*": "./*"
   },
   "main": "lib/index.js",
   "module": "es/index.mjs",
   "unpkg": "dist/index.full.js",
   "jsdelivr": "dist/index.full.js",
-  "scripts": {
-    "cy:open": "cypress open --component -b chrome",
-    "dev": "vite",
-    "test": "vitest",
-    "test:coverage": "vitest --coverage"
-  },
   "publishConfig": {
     "access": "public"
   },
-  "style": "dist/index.css",
   "peerDependencies": {
     "vue": "^3.2.0"
   },
@@ -61,8 +52,6 @@
     "@iconify-json/carbon": "^1.1.6",
     "@types/node": "*",
     "csstype": "^2.6.20",
-    "cypress": "^10.3.0",
-    "unplugin-vue-define-options": "^0.6.1",
     "vue": "^3.2.37",
     "vue-router": "^4.0.16"
   }

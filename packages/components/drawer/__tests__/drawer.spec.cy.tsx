@@ -1,0 +1,3 @@
+describe('VDrawer', () => {
+  // TODO: Implement
+});
