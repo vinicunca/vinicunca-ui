@@ -1,6 +1,11 @@
 import type { Ref } from 'vue';
 
 /**
+ * Any function
+ */
+export type Fn = () => void;
+
+/**
  * Maybe it's a ref, or not.
  *
  * ```ts
