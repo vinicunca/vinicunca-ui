@@ -50,6 +50,7 @@
     "unocss": "^0.43.2"
   },
   "devDependencies": {
+    "msw": "^0.43.1",
     "unbuild": "^0.7.4",
     "unocss": "^0.43.2"
   }

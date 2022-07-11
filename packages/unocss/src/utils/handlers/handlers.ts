@@ -1,6 +1,7 @@
 import { escapeSelector } from 'unocss';
 
 import { GLOBAL_KEYWORDS } from '../mappings';
+import { RE_NUMBER, RE_NUMBER_WITH_UNIT, RE_UNIT_ONLY } from './regex';
 
 // Not all, but covers most high frequency attributes
 const CSS_PROPS = [
@@ -64,10 +65,6 @@ const CSS_PROPS = [
   'border-radius',
 ];
 
-const RE_UNIT_ONLY = /^(px)$/i;
-const RE_NUMBER = /^(-?[0-9.]+)$/i;
-const RE_NUMBER_WITH_UNIT = /^(-?[0-9.]+)(px|pt|pc|rem|em|%|vh|vw|in|cm|mm|ex|ch|vmin|vmax|cqw|cqh|cqi|cqb|cqmin|cqmax|rpx)?$/i;
-
 function round(n: number) {
   return n.toFixed(10).replace(/\.0+$/, '').replace(/(\.\d+?)0+$/, '$1');
 }
@@ -77,7 +74,7 @@ export function numberWithUnit(str: string) {
   if (!match) {
     return;
   }
-  const [, n, unit] = match;
+  const [_, n, unit] = match;
   const num = parseFloat(n);
   if (unit && !Number.isNaN(num)) {
     return `${round(num)}${unit}`;
@@ -98,7 +95,7 @@ export function rem(str: string) {
   if (!match) {
     return;
   }
-  const [, n, unit] = match;
+  const [_, n, unit] = match;
   const num = parseFloat(n);
   if (!Number.isNaN(num)) {
     return unit ? `${round(num)}${unit}` : `${round(num / 4)}rem`;
@@ -113,7 +110,7 @@ export function px(str: string) {
   if (!match) {
     return;
   }
-  const [, n, unit] = match;
+  const [_, n, unit] = match;
   const num = parseFloat(n);
   if (!Number.isNaN(num)) {
     return unit ? `${round(num)}${unit}` : `${round(num)}px`;
@@ -201,7 +198,7 @@ export function time(str: string) {
   if (!match) {
     return;
   }
-  const [, n, unit] = match;
+  const [_, n, unit] = match;
   const num = parseFloat(n);
   if (!Number.isNaN(num)) {
     return unit ? `${round(num)}${unit}` : `${round(num)}ms`;
@@ -213,7 +210,7 @@ export function degree(str: string) {
   if (!match) {
     return;
   }
-  const [, n, unit] = match;
+  const [_, n, unit] = match;
   const num = parseFloat(n);
   if (!Number.isNaN(num)) {
     return unit ? `${round(num)}${unit}` : `${round(num)}deg`;

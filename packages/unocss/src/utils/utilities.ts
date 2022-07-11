@@ -1,4 +1,4 @@
-import type { CSSEntries, ParsedColorValue, Rule, RuleContext, VariantContext } from 'unocss';
+import type { CSSEntries, CSSObject, DynamicMatcher, ParsedColorValue, Rule, RuleContext, VariantContext } from 'unocss';
 import type { Theme } from '../theme';
 
 import { toArray } from '@vinicunca/js-utilities';
@@ -13,10 +13,9 @@ export const CONTROL_MINI_NO_NEGATIVE = '$$mini-no-negative';
  * Provide {@link DynamicMatcher} function returning spacing definition. See spacing rules.
  *
  * @param {string} propertyPrefix - Property for the css value to be created. Postfix will be appended according to direction matched.
- * @return {@link DynamicMatcher} object.
  * @see {@link DIRECTION_MAP}
  */
-export function directionSize(propertyPrefix: string) {
+export function directionSize(propertyPrefix: string): DynamicMatcher {
   return ([_, direction, size]: string[], { theme }: RuleContext<Theme>): CSSEntries | undefined => {
     const v = theme.spacing?.[size || 'DEFAULT'] ?? handler.bracket.cssvar.global.auto.fraction.rem(size);
     if (v != null) {
@@ -29,9 +28,26 @@ export function directionSize(propertyPrefix: string) {
  * Obtain color from theme by camel-casing colors.
  */
 function getThemeColor(theme: Theme, colors: string[]) {
-  return theme.colors?.[
-    colors.join('-').replace(/(-[a-z])/g, (n) => n.slice(1).toUpperCase())
-  ];
+  let obj: Theme['colors'] | string = theme.colors;
+  let index = -1;
+
+  for (const c of colors) {
+    index += 1;
+    if (obj && typeof obj !== 'string') {
+      const camel = colors.slice(index).join('-').replace(/(-[a-z])/g, (n) => n.slice(1).toUpperCase());
+      if (obj[camel]) {
+        return obj[camel];
+      }
+
+      if (obj[c]) {
+        obj = obj[c];
+        continue;
+      }
+    }
+    return undefined;
+  }
+
+  return obj;
 }
 
 /**
@@ -88,18 +104,23 @@ export const parseColor = (body: string, theme: Theme): ParsedColorValue | undef
     if (scale.match(/^\d+$/)) {
       no = scale;
       colorData = getThemeColor(theme, colors.slice(0, -1));
+      if (!colorData || typeof colorData === 'string') {
+        color = undefined;
+      } else {
+        color = colorData[no] as string;
+      }
     } else {
       colorData = getThemeColor(theme, colors);
       if (!colorData && colors.length <= 2) {
         [, no = no] = colors;
         colorData = getThemeColor(theme, [name]);
       }
-    }
 
-    if (typeof colorData === 'string') {
-      color = colorData;
-    } else if (no && colorData) {
-      color = colorData[no];
+      if (typeof colorData === 'string') {
+        color = colorData;
+      } else if (no && colorData) {
+        color = colorData[no] as string;
+      }
     }
   }
 
@@ -138,8 +159,8 @@ export const parseColor = (body: string, theme: Theme): ParsedColorValue | undef
  * @param {string} varName - Base name for the opacity variable.
  * @return {@link DynamicMatcher} object.
  */
-export function colorResolver(property: string, varName: string) {
-  return ([_, body]: string[], { theme }: RuleContext<Theme>) => {
+export function colorResolver(property: string, varName: string, shouldPass?: (css: CSSObject) => boolean): DynamicMatcher {
+  return ([_, body]: string[], { theme }: RuleContext<Theme>): CSSObject | undefined => {
     const data = parseColor(body, theme);
 
     if (!data) {
@@ -148,21 +169,21 @@ export function colorResolver(property: string, varName: string) {
 
     const { alpha, color, cssColor } = data;
 
+    const css: CSSObject = {};
+
     if (cssColor) {
       if (alpha != null) {
-        return {
-          [property]: colorToString(cssColor, alpha),
-        };
+        css[property] = colorToString(cssColor, alpha);
       } else {
-        return {
-          [`--vin-${varName}-opacity`]: colorOpacityToString(cssColor),
-          [property]: colorToString(cssColor, `var(--vin-${varName}-opacity)`),
-        };
+        css[`--vin-${varName}-opacity`] = colorOpacityToString(cssColor);
+        css[property] = colorToString(cssColor, `var(--vin-${varName}-opacity)`);
       }
     } else if (color) {
-      return {
-        [property]: colorToString(color, alpha),
-      };
+      css[property] = colorToString(color, alpha);
+    }
+
+    if (shouldPass?.(css) !== false) {
+      return css;
     }
   };
 }

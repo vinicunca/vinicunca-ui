@@ -161,7 +161,7 @@ function parseCssCommaColorFunction(color: string): CSSColorValue | false | unde
     return;
   }
 
-  const [, type, componentString] = match;
+  const [_, type, componentString] = match;
   // With min 3 (rgb) and max 4 (rgba), try to get 5 components
   const components = getComponents(componentString, ',', 5);
   if (components) {
@@ -184,7 +184,7 @@ function parseCssSpaceColorFunction(color: string): CSSColorValue | undefined {
     return;
   }
 
-  const [, fn, componentString] = match;
+  const [_, fn, componentString] = match;
   const parsed = parseCssSpaceColorValues(`${fn} ${componentString}`);
   if (parsed) {
     const { alpha, components: [type, ...components] } = parsed;

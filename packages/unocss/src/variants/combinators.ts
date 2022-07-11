@@ -1,5 +1,7 @@
 import type { Variant, VariantObject } from 'unocss';
 
+import { variantMatcher } from '../utils';
+
 function scopeMatcher(strict: boolean, name: string, template: string): VariantObject {
   const re = strict
     ? new RegExp(`^${name}(?:-\\[(.+?)\\])[:-]`)
@@ -29,4 +31,6 @@ export const variantCombinators: Variant[] = [
   scopeMatcher(true, 'parent', '&&-c>&&-s'),
   scopeMatcher(true, 'previous', '&&-c+&&-s'),
   scopeMatcher(true, 'peer', '&&-c~&&-s'),
+
+  variantMatcher('svg', (input) => ({ selector: `${input.selector} svg` })),
 ];

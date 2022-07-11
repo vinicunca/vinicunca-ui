@@ -72,6 +72,8 @@ export const variantBreakpoints: Variant<Theme> = {
       };
     }
   },
+  multiPass: true,
+  autocomplete: '(at-|lt-|)$breakpoints:',
 };
 
 function calcMaxWidthBySize(size: string) {

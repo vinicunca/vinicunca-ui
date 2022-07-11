@@ -5,7 +5,7 @@ import { handler, hasParseableColor } from '../utils';
 export const placeholderModifier: VariantFunction = (input: string, { theme }) => {
   const m = input.match(/^(.*)\b(placeholder-)(.+)$/);
   if (m) {
-    const [, pre = '', p, body] = m;
+    const [_, pre = '', p, body] = m;
     if (hasParseableColor(body, theme) || hasOpacityValue(body)) {
       return {
         // Append `placeholder-$ ` (with space!) to the rule to be matched.

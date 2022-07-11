@@ -6,5 +6,6 @@ export default defineConfig({
   },
   test: {
     isolate: false,
+    setupFiles: ['./vitest.setup.ts'],
   },
 });

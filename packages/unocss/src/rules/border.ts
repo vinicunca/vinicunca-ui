@@ -7,11 +7,11 @@ export const borderStyles = ['solid', 'dashed', 'dotted', 'double', 'hidden', 'n
 
 export const borders: Rule[] = [
   // compound
-  [/^(?:border)()(?:-(.+))?$/, handlerBorder, { autocomplete: '(border)-<directions>' }],
-  [/^(?:border)-([xy])(?:-(.+))?$/, handlerBorder],
-  [/^(?:border)-([rltbse])(?:-(.+))?$/, handlerBorder],
-  [/^(?:border)-(block|inline)(?:-(.+))?$/, handlerBorder],
-  [/^(?:border)-([bi][se])(?:-(.+))?$/, handlerBorder],
+  [/^(?:border|b)()(?:-(.+))?$/, handlerBorder, { autocomplete: '(border|b)-<directions>' }],
+  [/^(?:border|b)-([xy])(?:-(.+))?$/, handlerBorder],
+  [/^(?:border|b)-([rltbse])(?:-(.+))?$/, handlerBorder],
+  [/^(?:border|b)-(block|inline)(?:-(.+))?$/, handlerBorder],
+  [/^(?:border|b)-([bi][se])(?:-(.+))?$/, handlerBorder],
 
   // size
   [/^(?:border)-()(?:width|size)-(.+)$/, handlerBorderSize, { autocomplete: ['(border)-<num>', '(border)-<directions>-<num>'] }],
@@ -36,34 +36,25 @@ export const borders: Rule[] = [
 
   // radius
   [
-    /^(?:border--)?(?:rounded|rd)()(?:-(.+))?$/,
+    /^(?:border-|b-)?(?:rounded|rd)()(?:-(.+))?$/,
     handlerRounded,
-    { autocomplete: ['(border)-(rounded|rd)', '(border)-(rounded|rd)-<num>', '(rounded|rd)', '(rounded|rd)-<num>'] },
+    { autocomplete: ['(border|b)-(rounded|rd)', '(border|b)-(rounded|rd)-<num>', '(rounded|rd)', '(rounded|rd)-<num>'] },
   ],
-  [/^(?:border--)?(?:rounded|rd)-([rltb])(?:-(.+))?$/, handlerRounded],
-  [/^(?:border--)?(?:rounded|rd)-([rltb]{2})(?:-(.+))?$/, handlerRounded],
-  [/^(?:border--)?(?:rounded|rd)-([bi][se])(?:-(.+))?$/, handlerRounded],
-  [/^(?:border--)?(?:rounded|rd)-([bi][se]-[bi][se])(?:-(.+))?$/, handlerRounded],
+  [/^(?:border-|b-)?(?:rounded|rd)-([rltb])(?:-(.+))?$/, handlerRounded],
+  [/^(?:border-|b-)?(?:rounded|rd)-([rltb]{2})(?:-(.+))?$/, handlerRounded],
+  [/^(?:border-|b-)?(?:rounded|rd)-([bi][se])(?:-(.+))?$/, handlerRounded],
+  [/^(?:border-|b-)?(?:rounded|rd)-([bi][se]-[bi][se])(?:-(.+))?$/, handlerRounded],
 
   // style
   [
-    /^(?:border)-(?:style-)?()(.+)$/,
+    /^(?:border|b)-(?:style-)?()(.+)$/,
     handlerBorderStyle,
-    {
-      autocomplete: [
-        '(border)-style',
-        `(border)-(${borderStyles.join('|')})`,
-        '(border)-<directions>-style',
-        `(border)-<directions>-(${borderStyles.join('|')})`,
-        `(border)-<directions>-style-(${borderStyles.join('|')})`,
-        `(border)-style-(${borderStyles.join('|')})`,
-      ],
-    },
+    { autocomplete: ['(border|b)-style', `(border|b)-(${borderStyles.join('|')})`, '(border|b)-<directions>-style', `(border|b)-<directions>-(${borderStyles.join('|')})`, `(border|b)-<directions>-style-(${borderStyles.join('|')})`, `(border|b)-style-(${borderStyles.join('|')})`] },
   ],
-  [/^(?:border)-([xy])-(?:style-)?(.+)$/, handlerBorderStyle],
-  [/^(?:border)-([rltbse])-(?:style-)?(.+)$/, handlerBorderStyle],
-  [/^(?:border)-(block|inline)-(?:style-)?(.+)$/, handlerBorderStyle],
-  [/^(?:border)-([bi][se])-(?:style-)?(.+)$/, handlerBorderStyle],
+  [/^(?:border|b)-([xy])-(?:style-)?(.+)$/, handlerBorderStyle],
+  [/^(?:border|b)-([rltbse])-(?:style-)?(.+)$/, handlerBorderStyle],
+  [/^(?:border|b)-(block|inline)-(?:style-)?(.+)$/, handlerBorderStyle],
+  [/^(?:border|b)-([bi][se])-(?:style-)?(.+)$/, handlerBorderStyle],
 ];
 
 function handlerBorder(m: string[], ctx: RuleContext): CSSEntries | undefined {

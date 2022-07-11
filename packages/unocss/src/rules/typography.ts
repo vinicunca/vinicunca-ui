@@ -47,7 +47,7 @@ export const fonts: Rule<Theme>[] = [
     /^text-size-(.+)$/,
     ([_, s], { theme }) => {
       const themed = toArray(theme.fontSize?.[s]);
-      const size = themed?.[0] ?? handler.bracket.cssvar.rem(s);
+      const size = themed?.[0] ?? handler.bracket.cssvar.global.rem(s);
       if (size != null) {
         return { 'font-size': size };
       }
@@ -57,9 +57,9 @@ export const fonts: Rule<Theme>[] = [
 
   // weights
   [
-    /^font-?([^-]+)$/,
+    /^(?:font|fw)-?([^-]+)$/,
     ([_, s]) => ({ 'font-weight': WEIGHT_MAP[s] || handler.global.number(s) }),
-    { autocomplete: `font-(100|200|300|400|500|600|700|800|900|${Object.keys(WEIGHT_MAP).join('|')})` },
+    { autocomplete: `(font|fw)-(100|200|300|400|500|600|700|800|900|${Object.keys(WEIGHT_MAP).join('|')})` },
   ],
 
   // leadings

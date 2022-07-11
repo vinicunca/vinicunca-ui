@@ -1,25 +1,24 @@
 import type { Rule } from 'unocss';
 
 import { colorResolver, handler } from '../utils';
+import { RE_NUMBER_WITH_UNIT } from '../utils/handlers/regex';
 
 /**
  * @example opacity-100
  */
 export const opacity: Rule[] = [
-  [
-    /^opacity-(.+)$/,
-    ([_, d]) => ({ opacity: handler.bracket.percent.cssvar(d) }),
-  ],
+  [/^op(?:acity)?-?(.+)$/, ([_, d]) => ({ opacity: handler.bracket.percent.cssvar(d) })],
 ];
 
 /**
  * @example text-red-300
  */
 export const textColors: Rule[] = [
+  // auto detection and fallback to font-size if the content looks like a size
   [
-    /^(?:text)-(.+)$/,
-    colorResolver('color', 'text'),
-    { autocomplete: 'text-$colors' },
+    /^text-(.+)$/,
+    colorResolver('color', 'text', (css) => !css.color?.toString().match(RE_NUMBER_WITH_UNIT)),
+    { autocomplete: '(text)-$colors' },
   ],
   [
     /^(?:text)-opacity-(.+)$/,
