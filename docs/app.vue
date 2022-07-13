@@ -1,4 +1,6 @@
 <script lang="ts" setup>
+import { ref } from 'vue';
+
 // TODO: enable this when ready
 const socialCardLarge = ref('');
 const description = ref('');

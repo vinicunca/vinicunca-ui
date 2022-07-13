@@ -1,7 +1,6 @@
-import type { UserConfig } from 'unocss';
-import type { WebFontsOptions } from '@vinicunca/preset-web-fonts';
+import type { PresetVinicuncaOptions, VinicuncaUnoConfig, WebFontsOptions } from '@vinicunca/unocss';
 
-interface UnoCssOptions extends UserConfig {
+interface UnoCssOptions extends VinicuncaUnoConfig {
   /**
    * Injecting `uno.css` entry
    *
@@ -19,6 +18,7 @@ interface UnoCssOptions extends UserConfig {
 }
 
 export interface VinicuncaNuxtOptions {
-  unocss?: UnoCssOptions;
+  unocss: UnoCssOptions;
+  presetConfig: PresetVinicuncaOptions;
   presetWebFonts?: WebFontsOptions;
 }

@@ -6,10 +6,14 @@ import { presetIcons, transformerDirectives, transformerVariantGroup } from 'uno
 
 import { presetVinicunca, presetWebFonts } from './presets';
 
+export { PresetVinicuncaOptions, WebFontsOptions };
+
+export type VinicuncaUnoConfig = UserConfig<Theme>;
+
 export function extendUnocssOptions(
-  { config = {}, vinicunaConfig = {}, webFontsConfig }:
-  { config?: UserConfig; vinicunaConfig?: PresetVinicuncaOptions; webFontsConfig?: WebFontsOptions } = {},
-): UserConfig<Theme> {
+  { config = {}, presetConfig = {}, webFontsConfig }:
+  { config?: VinicuncaUnoConfig; presetConfig?: PresetVinicuncaOptions; webFontsConfig?: WebFontsOptions } = {},
+): VinicuncaUnoConfig {
   const include = [
     /\.vue$/,
     /vinicunca\/es\/components/,
@@ -26,7 +30,7 @@ export function extendUnocssOptions(
   }
 
   const presets: Preset[] = [
-    presetVinicunca(vinicunaConfig),
+    presetVinicunca(presetConfig),
     presetIcons({
       scale: 1.2,
     }),

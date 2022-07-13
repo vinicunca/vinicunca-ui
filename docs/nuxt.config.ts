@@ -1,4 +1,3 @@
-// TODO: uncomment when implementing components
 import path from 'path';
 
 // import { projRoot } from '@vinicunca/build-utils';
@@ -9,7 +8,7 @@ import VinicuncaModule from '@vinicunca/nuxt';
 // https://v3.nuxtjs.org/api/configuration/nuxt.config
 export default defineNuxtConfig({
   css: [
-    path.resolve('../unocss/styles/reset.css'),
+    path.resolve('../packages/unocss/styles/reset.css'),
   ],
 
   modules: [
@@ -18,6 +17,25 @@ export default defineNuxtConfig({
   ],
 
   vinicunca: {
+    unocss: {
+      theme: {
+        maxWidth: {
+          '8xl': '90rem',
+        },
+      },
+    },
+
+    presetConfig: {
+      brands: {
+        primary: '#1976d2',
+        secondary: '#9c27b0',
+        success: '#2e7d32',
+        info: '#0288d1',
+        warning: '#ed6c02',
+        danger: '#d32f2f',
+      },
+    },
+
     presetWebFonts: {
       provider: 'google',
       fonts: {
@@ -48,17 +66,8 @@ export default defineNuxtConfig({
         ],
       },
     },
-
-    unocss: {
-      theme: {
-        maxWidth: {
-          '8xl': '90rem',
-        },
-      },
-    },
   },
 
-  // TODO: uncomment when implementing components
   // vite: {
   //   resolve: {
   //     alias: [

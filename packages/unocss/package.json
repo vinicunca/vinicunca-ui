@@ -47,11 +47,11 @@
   "peerDependencies": {
     "@vinicunca/js-utilities": "^1.2.0",
     "ohmyfetch": "^0.4.18",
-    "unocss": "^0.44.0"
+    "unocss": "^0.44.1"
   },
   "devDependencies": {
     "msw": "^0.43.1",
     "unbuild": "^0.7.4",
-    "unocss": "^0.44.0"
+    "unocss": "^0.44.1"
   }
 }

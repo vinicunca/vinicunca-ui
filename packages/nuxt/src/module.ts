@@ -21,9 +21,10 @@ export default defineNuxtModule<VinicuncaNuxtOptions>({
     unocss: {
       autoImport: true,
     },
+    presetConfig: {},
   },
   setup(options) {
-    if (options.unocss.autoImport) {
+    if (options.unocss?.autoImport) {
       addPluginTemplate({
         filename: 'unocss.mjs',
         getContents: () => {
@@ -39,6 +40,7 @@ export default defineNuxtModule<VinicuncaNuxtOptions>({
 
     options.unocss = extendUnocssOptions({
       config: options.unocss,
+      presetConfig: options.presetConfig,
       webFontsConfig: options.presetWebFonts,
     });
 

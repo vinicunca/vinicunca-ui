@@ -1,8 +1,6 @@
 import path from 'path';
 
-import {
-  vinRoot,
-} from '@vinicunca/build-utils';
+import { vinRoot } from '@vinicunca/build-utils';
 import { defineConfig } from 'vite';
 import Unocss from 'unocss/vite';
 import vue from '@vitejs/plugin-vue';
@@ -10,7 +8,7 @@ import vueJsx from '@vitejs/plugin-vue-jsx';
 import DefineOptions from 'unplugin-vue-define-options/vite';
 import { extendUnocssOptions } from '@vinicunca/unocss';
 
-const resolve = (file: string) => path.resolve(__dirname, file);
+// const resolve = (file: string) => path.resolve(__dirname, file);
 
 export default defineConfig({
   server: {
@@ -32,7 +30,7 @@ export default defineConfig({
     DefineOptions(),
     Unocss({
       ...extendUnocssOptions({
-        vinicunaConfig: {
+        presetConfig: {
           brands: {
             primary: '#1976d2',
             secondary: '#9c27b0',
