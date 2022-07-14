@@ -1,0 +1,4 @@
+{
+  "extends": "./nuxt-module/playground/.nuxt/tsconfig.json",
+  "include": ["nuxt-module"]
+}

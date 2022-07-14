@@ -1,16 +1,14 @@
 import type { VinicuncaNuxtOptions } from './types';
 
-// TODO: uncomment when implementing components
-// import { dirname, resolve } from 'path';
-// import { fileURLToPath } from 'url';
+import { dirname, resolve } from 'path';
+import { fileURLToPath } from 'url';
 
-import { addPluginTemplate, defineNuxtModule, extendViteConfig, extendWebpackConfig } from '@nuxt/kit';
+import { addPlugin, addPluginTemplate, defineNuxtModule, extendViteConfig, extendWebpackConfig } from '@nuxt/kit';
 import { extendUnocssOptions } from '@vinicunca/unocss';
 import WebpackPlugin from '@unocss/webpack';
 import VitePlugin from '@unocss/vite';
 
-// TODO: uncomment when implementing components
-// const dir = dirname(fileURLToPath(import.meta.url));
+const dir = dirname(fileURLToPath(import.meta.url));
 
 export default defineNuxtModule<VinicuncaNuxtOptions>({
   meta: {
@@ -54,8 +52,7 @@ export default defineNuxtModule<VinicuncaNuxtOptions>({
       config.plugins.unshift(WebpackPlugin({}, options.unocss));
     });
 
-    // TODO: uncomment when implementing components
-    // addPlugin(resolve(dir, 'runtime', 'plugin'));
+    addPlugin(resolve(dir, 'runtime', 'plugin'));
   },
 });
 
