@@ -31,9 +31,7 @@ export function extendUnocssOptions(
 
   const presets: Preset[] = [
     presetVinicunca(presetConfig),
-    presetIcons({
-      scale: 1.2,
-    }),
+    presetIcons(),
   ];
 
   if (webFontsConfig) {

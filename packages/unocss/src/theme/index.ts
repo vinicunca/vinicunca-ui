@@ -6,5 +6,6 @@ export * from './layout';
 export * from './shadow';
 export * from './size';
 export * from './preflight';
+export * from './token';
 export * from './transition';
 export * from './types';

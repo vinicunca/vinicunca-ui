@@ -6,6 +6,11 @@ export interface ThemeAnimation {
   counts?: Dictionary<string | number>;
 }
 
+export interface ThemeTokens {
+  brands: Dictionary<string>;
+  textColors: Dictionary<string>;
+}
+
 export interface Theme {
   width?: Dictionary<string>;
   height?: Dictionary<string>;
@@ -57,7 +62,10 @@ export interface Theme {
     center?: boolean;
   };
   // vars
-  /** Used to generate CSS variables placeholder in preflight */
+  /** Used to generate CSS variables in preflight */
   preflightBase?: Dictionary<string | number>;
-  varsBase?: Dictionary<string | number>;
+  tokens?: {
+    light?: Partial<ThemeTokens>;
+    dark?: Partial<ThemeTokens>;
+  };
 }

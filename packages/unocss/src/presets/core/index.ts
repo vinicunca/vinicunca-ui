@@ -8,8 +8,6 @@ import { variants } from '../../variants';
 
 export type { ThemeAnimation, Theme };
 
-const brands = ['primary', 'secondary', 'success', 'info', 'warning', 'danger'];
-
 export interface PresetVinicuncaOptions extends PresetOptions {
   /**
    * @default 'class'
@@ -23,15 +21,6 @@ export interface PresetVinicuncaOptions extends PresetOptions {
    * @default 'vin-'
    */
   variablePrefix?: string;
-
-  brands?: {
-    primary?: string;
-    secondary?: string;
-    success?: string;
-    info?: string;
-    warning?: string;
-    danger?: string;
-  };
 }
 
 export function presetVinicunca(options: PresetVinicuncaOptions = {}): Preset<Theme> {
@@ -49,12 +38,6 @@ export function presetVinicunca(options: PresetVinicuncaOptions = {}): Preset<Th
       : undefined,
     preflights: preflights(options),
     safelist: [
-      ...brands.map((c) => `bg-${c}`),
-      ...brands.map((c) => `hover:bg-${c}`),
-      ...brands.map((c) => `border-${c}`),
-      ...brands.map((c) => `text-${c}`),
-      ...brands.map((c) => `shadow-${c}`),
-
       // Used by useLockScreen
       'overflow-hidden',
     ],
