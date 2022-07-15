@@ -1,12 +1,22 @@
 import path from 'path';
 
-// import { projRoot } from '@vinicunca/build-utils';
-// import DefineOptions from 'unplugin-vue-define-options/vite';
+import { vinRoot } from '@vinicunca/build-utils';
+import DefineOptions from 'unplugin-vue-define-options/vite';
 import { defineNuxtConfig } from 'nuxt';
 import VinicuncaModule from '@vinicunca/nuxt';
 
 // https://v3.nuxtjs.org/api/configuration/nuxt.config
 export default defineNuxtConfig({
+  build: {
+    postcss: {
+      postcssOptions: {
+        plugins: {
+          'postcss-nested': {},
+        },
+      },
+    },
+  },
+
   css: [
     path.resolve('../packages/unocss/styles/reset.css'),
   ],
@@ -68,22 +78,18 @@ export default defineNuxtConfig({
     },
   },
 
-  // vite: {
-  //   resolve: {
-  //     alias: [
-  //       {
-  //         find: /^vinicunca(\/(es|lib))?$/,
-  //         replacement: path.resolve(projRoot, 'packages/vinicunca/index.ts'),
-  //       },
-  //       {
-  //         find: /^vinicunca\/(es|lib)\/(.*)$/,
-  //         replacement: `${path.resolve(projRoot, 'packages')}/$2`,
-  //       },
-  //     ],
-  //   },
+  vite: {
+    resolve: {
+      alias: [
+        {
+          find: /^vinicunca$/,
+          replacement: path.resolve(vinRoot, 'index.ts'),
+        },
+      ],
+    },
 
-  //   plugins: [
-  //     DefineOptions(),
-  //   ],
-  // },
+    plugins: [
+      DefineOptions(),
+    ],
+  },
 });

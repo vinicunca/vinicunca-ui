@@ -20,11 +20,19 @@ watch(() => route.path, () => {
             <AppLogo class="w-auto h-5" />
           </NuxtLink>
 
-          <NuxtLink to="/about">
-            about
-          </NuxtLink>
+          <AppNavSearch />
 
-          <BaseHamburger v-model="navIsOpen" class="ml-auto" />
+          <a
+            href="https://github.com/vinicunca/vinicunca-ui"
+            title="Github"
+            target="_blank"
+            rel="noreferrer noopener"
+            class="text-2xl text-slate-500 flex hover:text-slate-600 dark:text-slate-400 dark:hover:text-slate-300"
+          >
+            <VIcon name="i-carbon-logo-github" />
+          </a>
+
+          <AppNavHamburger :is-active="navIsOpen" class="ml-4" @click="navIsOpen = !navIsOpen" />
         </div>
       </div>
     </div>

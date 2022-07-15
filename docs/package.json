@@ -9,6 +9,7 @@
   "devDependencies": {
     "@nuxt/content": "^2.0.1",
     "@unocss/nuxt": "^0.44.1",
-    "nuxt": "3.0.0-rc.4"
+    "nuxt": "3.0.0-rc.4",
+    "postcss-nested": "^5.0.6"
   }
 }

@@ -1,5 +1,8 @@
 <template>
   <main class="prose">
-    <ContentDoc />
+    <!-- <ContentDoc /> -->
+
+    <VScrollbar>
+    </VScrollbar>
   </main>
 </template>

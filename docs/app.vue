@@ -47,7 +47,15 @@ const description = ref('');
     <Body class="antialiased text-slate-500 dark:text-slate-400 bg-white dark:bg-slate-900">
       <AppHeader />
 
-      <NuxtPage />
+      <NuxtLayout>
+        <NuxtPage />
+      </NuxtLayout>
     </Body>
   </Html>
 </template>
+
+<style lang="postcss">
+  html, body, #__nuxt {
+    height: 100vh;
+  }
+</style>
