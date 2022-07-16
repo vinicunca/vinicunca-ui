@@ -45,6 +45,7 @@
     "vue": "^3.2.0"
   },
   "dependencies": {
+    "@floating-ui/dom": "^0.5.4",
     "@vinicunca/js-utilities": "^1.2.0",
     "dayjs": "^1.11.3"
   },

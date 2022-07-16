@@ -1,3 +1,5 @@
+import type { VNodeArrayChildren } from 'vue';
+
 export enum PATCH_FLAGS {
   TEXT = 1,
   CLASS = 2,
@@ -12,4 +14,12 @@ export enum PATCH_FLAGS {
   DYNAMIC_SLOTS = 1024,
   HOISTED = -1,
   BAIL = -2,
+}
+
+export function ensureOnlyChild(children?: VNodeArrayChildren) {
+  if (!Array.isArray(children) || children.length > 1) {
+    throw new Error('expect to receive a single Vue element child');
+  }
+
+  return children[0];
 }

@@ -2,7 +2,12 @@
   <main class="prose">
     <!-- <ContentDoc /> -->
 
-    <VScrollbar>
-    </VScrollbar>
+    <VTooltip>
+      <template #trigger>
+        <button>Yuhuu</button>
+      </template>
+
+      Basic Tooltip
+    </VTooltip>
   </main>
 </template>

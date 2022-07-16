@@ -67,7 +67,3 @@ export type ScrollbarEmits = typeof scrollbarEmits;
 
 export type ScrollbarInstance = InstanceType<typeof Scrollbar>;
 
-export interface ScrollbarContext {
-  elScrollbar: HTMLDivElement;
-  elWrapper: HTMLDivElement;
-}

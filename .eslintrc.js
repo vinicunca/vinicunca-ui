@@ -5,6 +5,7 @@ module.exports = defineConfig({
 
   rules: {
     'sonarjs/cognitive-complexity': 'off',
+    'react/prop-types': 'off',
   },
 
   overrides: [
